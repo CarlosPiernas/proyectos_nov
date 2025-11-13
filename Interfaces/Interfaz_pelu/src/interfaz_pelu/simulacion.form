@@ -24,7 +24,7 @@
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="menuSim"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -74,88 +74,85 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="cleinteLava" min="-2" pref="160" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="peluCorta" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <Component id="clienteCorte" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="lavadoIcon" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                          <Component id="corteIcon" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="87" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="peluLava" max="32767" attributes="0"/>
-                                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="peluTinte" pref="129" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Component id="lavadoBarra" min="-2" pref="160" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       <Component id="corteBarra" min="-2" pref="160" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="tinteBarra" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <Component id="clienteTinte" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <Component id="tinteIcon" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="inicio_Btn" min="-2" pref="88" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                      <Component id="pausa_Btn" min="-2" pref="128" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Component id="fin_Btn" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+                                      <Component id="corteIcon" min="-2" pref="160" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tinteBarra" max="32767" attributes="0"/>
+                                  <Component id="clienteTinte" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="peluTinte" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tinteIcon" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lavadoIcon" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="cleinteLava" pref="160" max="32767" attributes="0"/>
+                                      <Component id="peluLava" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="peluCorta" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="clienteCorte" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
+                      <EmptySpace pref="68" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="peluPeina" min="-2" pref="160" max="-2" attributes="0"/>
                           <Component id="peineBarra" min="-2" pref="160" max="-2" attributes="0"/>
                           <Component id="peinadoIcon" min="-2" max="-2" attributes="0"/>
                           <Component id="clientePeina" min="-2" pref="160" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                      <EmptySpace pref="132" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="peluAct" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="peluAct" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="numAct" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="clientesAten" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="numAten" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="peluDes" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="clientesPen" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="numAct" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="numPen" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numDes" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="clientesAten" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="numAten" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                              <Component id="inicio_Btn" min="-2" pref="88" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="pausa_Btn" min="-2" pref="128" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="fin_Btn" min="-2" pref="88" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="peluDes" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="clientesPen" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="numPen" min="-2" max="-2" attributes="0"/>
-                          <Component id="numDes" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -178,7 +175,7 @@
                           <Component id="numAct" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="numDes" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="peluCorta" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="peluLava" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
@@ -196,7 +193,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cleinteLava" min="-2" pref="31" max="-2" attributes="0"/>
                           <Component id="clienteCorte" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="clienteTinte" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="clientePeina" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                           </Group>
@@ -208,13 +205,13 @@
                           <Component id="tinteBarra" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="peineBarra" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="fin_Btn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="inicio_Btn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="pausa_Btn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="1076" max="32767" attributes="0"/>
+                      <EmptySpace pref="1109" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -232,12 +229,11 @@
                   <Image iconType="3" name="/interfaz_pelu/imagenes/corte.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="5">
-                      <Color PropertyName="color" blue="ff" green="cc" red="99" type="rgb"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
+                <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="tinteIcon">
@@ -252,12 +248,11 @@
                   <Image iconType="3" name="/interfaz_pelu/imagenes/tinte.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="5">
-                      <Color PropertyName="color" blue="ff" green="cc" red="99" type="rgb"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
+                <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peinadoIcon">
@@ -272,12 +267,11 @@
                   <Image iconType="3" name="/interfaz_pelu/imagenes/peinado.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="5">
-                      <Color PropertyName="color" blue="ff" green="cc" red="99" type="rgb"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
+                <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lavadoIcon">
@@ -292,12 +286,11 @@
                   <Image iconType="3" name="/interfaz_pelu/imagenes/lavado.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="5">
-                      <Color PropertyName="color" blue="ff" green="cc" red="99" type="rgb"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
                   </Border>
                 </Property>
+                <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluCorta">
@@ -391,6 +384,17 @@
             <Component class="javax.swing.JProgressBar" name="corteBarra">
             </Component>
             <Component class="javax.swing.JProgressBar" name="lavadoBarra">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="value" type="int" value="25"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JProgressBar" name="tinteBarra">
             </Component>
@@ -459,6 +463,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CLIENTES ATENDIDOS:"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="clientesPen">
@@ -467,6 +476,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CLIENTES PENDIENTES: "/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluAct">
@@ -475,6 +489,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PELUQUERAS ACTIVAS:"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluDes">
@@ -483,6 +502,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PELUQUERAS DESCANSANDO:"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numAten">
@@ -491,6 +515,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numAct">
@@ -499,6 +528,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numDes">
@@ -507,6 +541,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numPen">
@@ -515,6 +554,11 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>

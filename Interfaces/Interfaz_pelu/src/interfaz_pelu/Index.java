@@ -9,11 +9,13 @@ package interfaz_pelu;
  * @author Carlos
  */
 public class Index extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Index.class.getName());
     private static gestion g;
     private static simulacion s;
-    
+    private static Login l;
+    private static PopupGest p;
+
     /**
      * Creates new form Index
      */
@@ -106,6 +108,7 @@ public class Index extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void sim_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sim_BtnActionPerformed
@@ -117,9 +120,14 @@ public class Index extends javax.swing.JFrame {
 
     private void gest_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gest_BtnActionPerformed
         // TODO add your handling code here:
-        System.out.println("Funciona el boton gestion");
-        this.dispose();
-        g.abrirGestion();
+        if (l.getLog() == 0) {
+            System.out.println("Funciona el boton gestion");
+            this.dispose();
+            g.abrirGestion();
+        } else {
+            p.abrirPopup();
+        }
+
     }//GEN-LAST:event_gest_BtnActionPerformed
 
     /**
@@ -144,16 +152,21 @@ public class Index extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
         System.out.println("Se inicia el programa");
         System.out.println("Creamos el objeto gestion");
-        g=new gestion();
+        g = new gestion();
         System.out.println("creamos el objeto simulacion");
-        s=new simulacion();
-        java.awt.EventQueue.invokeLater(() -> new Index().setVisible(true));
+        s = new simulacion();
+        System.out.println("Creamos el objeto login");
+        l = new Login();
+        l.abrirLogin();
+        System.out.println("Creamos el objeto Popup");
+        p = new PopupGest();
     }
-    public void abrirIndex(){
-    this.setVisible(true);
+
+    public void abrirIndex() {
+        System.out.println(l.getLog());
+        java.awt.EventQueue.invokeLater(() -> new Index().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -9,15 +9,17 @@ package interfaz_pelu;
  * @author Carlos
  */
 public class gestion extends javax.swing.JFrame {
+
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(gestion.class.getName());
     private static datos d;
     private static consultas c;
+
     /**
      * Creates new form gestion
      */
     public gestion() {
         System.out.println("Se inicia el objeto gestion");
-       
+
         initComponents();
     }
 
@@ -133,6 +135,7 @@ public class gestion extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void consultas_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultas_BtnActionPerformed
@@ -160,13 +163,12 @@ public class gestion extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
-    public void abrirGestion(){
+    public void abrirGestion() {
         //java.awt.EventQueue.invokeLater(() -> new gestion().setVisible(true));
         this.setVisible(true);
         System.out.println("se crea el objeto datos");
-         d=new datos();
-         c=new consultas();
+        d = new datos();
+        c = new consultas();
     }
 
 
