@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz_pelu;
+package Peluqueria;
 
 /**
  *
  * @author Alumno
  */
 public class PopupGest extends javax.swing.JFrame {
-
+    
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PopupGest.class.getName());
 
     /**
@@ -30,8 +30,7 @@ public class PopupGest extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Solo el administrador puede acceder a la gestión");
@@ -50,12 +49,12 @@ public class PopupGest extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
      */
+    
     public void abrirPopup() {
         java.awt.EventQueue.invokeLater(() -> new PopupGest().setVisible(true));
 

@@ -2,20 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz_pelu;
+package Peluqueria;
 
 /**
  *
- * @author Carlos
+ * @author Alumno
  */
 public class Index extends javax.swing.JFrame {
-
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Index.class.getName());
-    private static gestion g;
-    private static simulacion s;
+    private static Gestion g;
+    private static Simulacion s;
     private static Login l;
     private static PopupGest p;
-    private static Conexion cx;
 
     /**
      * Creates new form Index
@@ -39,7 +38,6 @@ public class Index extends javax.swing.JFrame {
         sim_Btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 102));
 
@@ -74,28 +72,25 @@ public class Index extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(195, 195, 195)
                 .addComponent(gest_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sim_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(195, 195, 195))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addGap(220, 220, 220)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addGap(74, 74, 74)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gest_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sim_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(139, 139, 139))
         );
-
-        gest_Btn.getAccessibleContext().setAccessibleName("gest_Btn");
-        sim_Btn.getAccessibleContext().setAccessibleName("sim_Btn");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,19 +100,11 @@ public class Index extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void sim_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sim_BtnActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Funciona el boton simulacion");
-        this.dispose();
-        s.abrirSimulacion();
-    }//GEN-LAST:event_sim_BtnActionPerformed
 
     private void gest_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gest_BtnActionPerformed
         // TODO add your handling code here:
@@ -128,13 +115,19 @@ public class Index extends javax.swing.JFrame {
         } else {
             p.abrirPopup();
         }
-
     }//GEN-LAST:event_gest_BtnActionPerformed
+
+    private void sim_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sim_BtnActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Funciona el boton simulacion");
+        this.dispose();
+        s.abrirSimulacion();
+    }//GEN-LAST:event_sim_BtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) throws SQLException{
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -155,19 +148,15 @@ public class Index extends javax.swing.JFrame {
         /* Create and display the form */
         System.out.println("Se inicia el programa");
         System.out.println("Creamos el objeto gestion");
-        g = new gestion();
+        g = new Gestion();
         System.out.println("creamos el objeto simulacion");
-        s = new simulacion();
+        s = new Simulacion();
         System.out.println("Creamos el objeto login");
         l = new Login();
         l.abrirLogin();
         System.out.println("Creamos el objeto Popup");
         p = new PopupGest();
-        System.out.println("Creamos el objeto conexion");
-        cx = new Conexion();
-        cx.Clientes();
     }
-
     public void abrirIndex() {
         System.out.println(l.getLog());
         java.awt.EventQueue.invokeLater(() -> new Index().setVisible(true));
