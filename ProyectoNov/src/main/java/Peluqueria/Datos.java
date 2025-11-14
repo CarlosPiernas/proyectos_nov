@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz_pelu;
+package Peluqueria;
 
 /**
  *
- * @author Carlos
+ * @author Alumno
  */
-public class datos extends javax.swing.JFrame {
-
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(datos.class.getName());
+public class Datos extends javax.swing.JFrame {
+    
+    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Datos.class.getName());
 
     /**
-     * Creates new form datos
+     * Creates new form Datos
      */
-    public datos() {
+    public Datos() {
         initComponents();
     }
 
@@ -35,12 +35,8 @@ public class datos extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(204, 0, 102));
 
@@ -129,14 +125,6 @@ public class datos extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Volver");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Simulación");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,21 +137,18 @@ public class datos extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
      */
+    
     public void abrirDatos() {
         //java.awt.EventQueue.invokeLater(() -> new datos().setVisible(true));
         this.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

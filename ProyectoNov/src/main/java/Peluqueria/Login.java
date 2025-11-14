@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz_pelu;
+package Peluqueria;
 
 /**
  *
@@ -13,7 +13,6 @@ public class Login extends javax.swing.JFrame {
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
     private static int log;
     private static Index i;
-
     public static int getLog() {
         return log;
     }
@@ -23,7 +22,6 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        
     }
 
     /**
@@ -45,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         borrarBtn = new javax.swing.JButton();
         iniciarBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -161,7 +159,6 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUsuActionPerformed
