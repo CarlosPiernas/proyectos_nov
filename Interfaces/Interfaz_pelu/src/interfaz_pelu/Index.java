@@ -4,6 +4,8 @@
  */
 package interfaz_pelu;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Carlos
@@ -11,10 +13,11 @@ package interfaz_pelu;
 public class Index extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Index.class.getName());
-    private static gestion g;
-    private static simulacion s;
+    private static Gestion g;
+    private static Simulacion s;
     private static Login l;
     private static PopupGest p;
+    private static Conexion cx;
     
     /**
      * Creates new form Index
@@ -123,7 +126,11 @@ public class Index extends javax.swing.JFrame {
         if (l.getLog() == 0) {
             System.out.println("Funciona el boton gestion");
             this.dispose();
-            g.abrirGestion();
+            try {
+                g.abrirGestion();
+            } catch (SQLException ex) {
+                System.getLogger(Index.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
         } else {
             p.abrirPopup();
         }
@@ -133,7 +140,7 @@ public class Index extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]){
+    public static void main(String args[]) throws SQLException{
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -154,15 +161,17 @@ public class Index extends javax.swing.JFrame {
         /* Create and display the form */
         System.out.println("Se inicia el programa");
         System.out.println("Creamos el objeto gestion");
-        g = new gestion();
+        g = new Gestion();
         System.out.println("creamos el objeto simulacion");
-        s = new simulacion();
+        s = new Simulacion();
         System.out.println("Creamos el objeto login");
         l = new Login();
         l.abrirLogin();
         System.out.println("Creamos el objeto Popup");
         p = new PopupGest();
         System.out.println("Creamos el objeto conexion");
+        cx = new Conexion();
+        //cx.Clientes();
         
     }
 

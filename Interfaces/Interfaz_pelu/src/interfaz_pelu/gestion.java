@@ -4,20 +4,25 @@
  */
 package interfaz_pelu;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Carlos
  */
-public class gestion extends javax.swing.JFrame {
+public class Gestion extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(gestion.class.getName());
-    private static datos d;
-    private static consultas c;
+    private static Datos d;
+    private static Consultas c;
+    private static Servicios s;
+    private static Index i;
+    private static Simulacion sim;
 
     /**
      * Creates new form gestion
      */
-    public gestion() {
+    public Gestion() {
         System.out.println("Se inicia el objeto gestion");
 
         initComponents();
@@ -37,9 +42,8 @@ public class gestion extends javax.swing.JFrame {
         servicios_Btn = new javax.swing.JButton();
         sincro_Btn = new javax.swing.JButton();
         datos_Btn = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        volver = new javax.swing.JMenu();
-        simu = new javax.swing.JMenu();
+        backBtn = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -86,6 +90,26 @@ public class gestion extends javax.swing.JFrame {
             }
         });
 
+        backBtn.setBackground(new java.awt.Color(153, 204, 255));
+        backBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/BACK (1).png"))); // NOI18N
+        backBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        homeBtn.setBackground(new java.awt.Color(153, 204, 255));
+        homeBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/sim__1_-removebg-preview.png"))); // NOI18N
+        homeBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -100,11 +124,21 @@ public class gestion extends javax.swing.JFrame {
                     .addComponent(sincro_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(consultas_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(100, 100, 100))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(datos_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(consultas_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -114,14 +148,6 @@ public class gestion extends javax.swing.JFrame {
                     .addComponent(sincro_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(75, 75, 75))
         );
-
-        volver.setText("Volver");
-        jMenuBar1.add(volver);
-
-        simu.setText("Simulación");
-        jMenuBar1.add(simu);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,6 +173,13 @@ public class gestion extends javax.swing.JFrame {
 
     private void servicios_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicios_BtnActionPerformed
         // TODO add your handling code here:
+        System.out.println("funciona el boton servicios");
+        this.dispose();
+        try {
+            s.abrirServicios();
+        } catch (SQLException ex) {
+            System.getLogger(Gestion.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_servicios_BtnActionPerformed
 
     private void sincro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sincro_BtnActionPerformed
@@ -157,29 +190,49 @@ public class gestion extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.out.println("funciona el boton datos");
         this.dispose();
-        d.abrirDatos();
+        try {
+            d.abrirDatos();
+        } catch (SQLException ex) {
+            System.getLogger(Gestion.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }//GEN-LAST:event_datos_BtnActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        this.dispose();
+        i.abrirIndex();
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        sim.abrirSimulacion();
+        
+            
+        
+    }//GEN-LAST:event_homeBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public void abrirGestion() {
+    public void abrirGestion() throws SQLException {
         //java.awt.EventQueue.invokeLater(() -> new gestion().setVisible(true));
         this.setVisible(true);
         System.out.println("se crea el objeto datos");
-        d = new datos();
-        c = new consultas();
+        d = new Datos();
+        c = new Consultas();
+        s = new Servicios();
+        i = new Index();
+        sim = new Simulacion();
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JButton consultas_Btn;
     private javax.swing.JButton datos_Btn;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton servicios_Btn;
-    private javax.swing.JMenu simu;
     private javax.swing.JButton sincro_Btn;
-    private javax.swing.JMenu volver;
     // End of variables declaration//GEN-END:variables
 }

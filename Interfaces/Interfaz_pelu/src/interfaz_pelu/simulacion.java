@@ -4,17 +4,21 @@
  */
 package interfaz_pelu;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Carlos
  */
-public class simulacion extends javax.swing.JFrame {
+public class Simulacion extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(simulacion.class.getName());
+    private static Index i;
+    private static Gestion g;
     /**
      * Creates new form simulacion
      */
-    public simulacion() {
+    public Simulacion() {
         System.out.println("Se inicia el objeto simulacion");
         initComponents();
     }
@@ -57,9 +61,8 @@ public class simulacion extends javax.swing.JFrame {
         numAct = new javax.swing.JLabel();
         numDes = new javax.swing.JLabel();
         numPen = new javax.swing.JLabel();
-        menuSim = new javax.swing.JMenuBar();
-        volverSim = new javax.swing.JMenu();
-        gestSim = new javax.swing.JMenu();
+        backBtn = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -161,35 +164,47 @@ public class simulacion extends javax.swing.JFrame {
 
         clientesAten.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clientesAten.setText("CLIENTES ATENDIDOS:");
-        clientesAten.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         clientesPen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         clientesPen.setText("CLIENTES PENDIENTES: ");
-        clientesPen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         peluAct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         peluAct.setText("PELUQUERAS ACTIVAS:");
-        peluAct.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         peluDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         peluDes.setText("PELUQUERAS DESCANSANDO:");
-        peluDes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         numAten.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         numAten.setText("X");
-        numAten.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         numAct.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         numAct.setText("X");
-        numAct.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         numDes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         numDes.setText("X");
-        numDes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         numPen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         numPen.setText("X");
-        numPen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        backBtn.setBackground(new java.awt.Color(153, 204, 255));
+        backBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/BACK (1).png"))); // NOI18N
+        backBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        homeBtn.setBackground(new java.awt.Color(153, 204, 255));
+        homeBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/gestion (1).png"))); // NOI18N
+        homeBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -201,56 +216,64 @@ public class simulacion extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lavadoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lavadoBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(66, 66, 66)
+                                        .addComponent(corteBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(226, 226, 226)
+                                        .addComponent(corteIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(66, 66, 66)
-                                .addComponent(corteBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(226, 226, 226)
-                                .addComponent(corteIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tinteBarra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(clienteTinte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(peluTinte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tinteIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lavadoIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cleinteLava, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                .addComponent(peluLava, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(66, 66, 66)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tinteBarra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(clienteTinte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(peluTinte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tinteIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(peluAct)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(numAct))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(clientesAten)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(numAten)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lavadoIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cleinteLava, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                            .addComponent(peluLava, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGap(66, 66, 66)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(peluCorta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(clienteCorte, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(peluCorta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(clienteCorte, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(peluPeina, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peineBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peinadoIcon)
-                    .addComponent(clientePeina, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(132, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(peluPeina, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peineBarra, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peinadoIcon)
+                            .addComponent(clientePeina, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(132, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(peluAct)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(numAct))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(clientesAten)
-                                .addGap(18, 18, 18)
-                                .addComponent(numAten)))
-                        .addGap(44, 44, 44)
+                        .addGap(452, 452, 452)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(peluDes)
                             .addComponent(clientesPen))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(numPen)
-                            .addComponent(numDes)))
+                            .addComponent(numDes))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(334, 334, 334)
                         .addComponent(inicio_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -258,23 +281,33 @@ public class simulacion extends javax.swing.JFrame {
                         .addComponent(pausa_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
                         .addComponent(fin_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clientesAten)
-                    .addComponent(clientesPen)
-                    .addComponent(numAten)
-                    .addComponent(numPen))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(peluAct)
-                    .addComponent(peluDes)
-                    .addComponent(numAct)
-                    .addComponent(numDes))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(clientesAten)
+                                .addComponent(numAten))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(peluAct)
+                            .addComponent(numAct)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(clientesPen)
+                            .addComponent(numPen))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(peluDes)
+                            .addComponent(numDes))))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(peluCorta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,18 +338,10 @@ public class simulacion extends javax.swing.JFrame {
                     .addComponent(fin_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inicio_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pausa_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1109, Short.MAX_VALUE))
+                .addContainerGap(1113, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
-
-        volverSim.setText("Volver");
-        menuSim.add(volverSim);
-
-        gestSim.setText("Gestión");
-        menuSim.add(gestSim);
-
-        setJMenuBar(menuSim);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -345,12 +370,33 @@ public class simulacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inicio_BtnActionPerformed
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        this.dispose();
+        i.abrirIndex();
+        
+        
+
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        try {
+            g.abrirGestion();
+        } catch (SQLException ex) {
+            System.getLogger(Simulacion.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }//GEN-LAST:event_homeBtnActionPerformed
+
     public void abrirSimulacion() {
         //java.awt.EventQueue.invokeLater(() -> new simulacion().setVisible(true));
         this.setVisible(true);
+        i = new Index();
+        g = new Gestion();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backBtn;
     private javax.swing.JLabel cleinteLava;
     private javax.swing.JLabel clienteCorte;
     private javax.swing.JLabel clientePeina;
@@ -360,13 +406,12 @@ public class simulacion extends javax.swing.JFrame {
     private javax.swing.JProgressBar corteBarra;
     private javax.swing.JLabel corteIcon;
     private javax.swing.JButton fin_Btn;
-    private javax.swing.JMenu gestSim;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JButton inicio_Btn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JProgressBar lavadoBarra;
     private javax.swing.JLabel lavadoIcon;
-    private javax.swing.JMenuBar menuSim;
     private javax.swing.JLabel numAct;
     private javax.swing.JLabel numAten;
     private javax.swing.JLabel numDes;
@@ -382,6 +427,5 @@ public class simulacion extends javax.swing.JFrame {
     private javax.swing.JLabel peluTinte;
     private javax.swing.JProgressBar tinteBarra;
     private javax.swing.JLabel tinteIcon;
-    private javax.swing.JMenu volverSim;
     // End of variables declaration//GEN-END:variables
 }

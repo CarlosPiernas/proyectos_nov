@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="menuSim">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="volverSim">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Volver"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="gestSim">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
-    </Menu>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="menuSim"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
@@ -76,65 +59,66 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lavadoBarra" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="lavadoBarra" min="-2" pref="160" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                              <Component id="corteBarra" min="-2" pref="160" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+                                              <Component id="corteIcon" min="-2" pref="160" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                      <Component id="corteBarra" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="tinteBarra" max="32767" attributes="0"/>
+                                          <Component id="clienteTinte" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="peluTinte" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tinteIcon" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
-                                      <Component id="corteIcon" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="peluAct" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="numAct" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="clientesAten" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="numAten" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="lavadoIcon" min="-2" pref="160" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cleinteLava" pref="160" max="32767" attributes="0"/>
+                                                  <Component id="peluLava" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="peluCorta" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                              <Component id="clienteCorte" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tinteBarra" max="32767" attributes="0"/>
-                                  <Component id="clienteTinte" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="peluTinte" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="tinteIcon" alignment="0" max="32767" attributes="0"/>
+                              <EmptySpace pref="68" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="peluPeina" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="peineBarra" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="peinadoIcon" min="-2" max="-2" attributes="0"/>
+                                  <Component id="clientePeina" min="-2" pref="160" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace pref="132" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="lavadoIcon" min="-2" pref="160" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="cleinteLava" pref="160" max="32767" attributes="0"/>
-                                      <Component id="peluLava" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="66" pref="66" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="peluCorta" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                  <Component id="clienteCorte" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="68" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="peluPeina" min="-2" pref="160" max="-2" attributes="0"/>
-                          <Component id="peineBarra" min="-2" pref="160" max="-2" attributes="0"/>
-                          <Component id="peinadoIcon" min="-2" max="-2" attributes="0"/>
-                          <Component id="clientePeina" min="-2" pref="160" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="132" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="peluAct" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="numAct" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="clientesAten" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="numAten" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="452" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="peluDes" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="clientesPen" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -144,6 +128,17 @@
                                   <Component id="numPen" min="-2" max="-2" attributes="0"/>
                                   <Component id="numDes" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="backBtn" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="homeBtn" min="-2" pref="81" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
@@ -154,26 +149,43 @@
                               <Component id="fin_Btn" min="-2" pref="88" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="341" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="clientesAten" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="clientesPen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numAten" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numPen" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="peluAct" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="peluDes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numAct" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="clientesAten" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="numAten" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="backBtn" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                                      <Component id="homeBtn" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="peluAct" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numAct" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="clientesPen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numPen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="peluDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -211,7 +223,7 @@
                           <Component id="inicio_Btn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="pausa_Btn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="1109" max="32767" attributes="0"/>
+                      <EmptySpace pref="1113" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -463,11 +475,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CLIENTES ATENDIDOS:"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="clientesPen">
@@ -476,11 +483,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CLIENTES PENDIENTES: "/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluAct">
@@ -489,11 +491,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PELUQUERAS ACTIVAS:"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluDes">
@@ -502,11 +499,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PELUQUERAS DESCANSANDO:"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numAten">
@@ -515,11 +507,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numAct">
@@ -528,11 +515,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numDes">
@@ -541,11 +523,6 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="numPen">
@@ -554,12 +531,49 @@
                   <Font name="Segoe UI" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="X"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="backBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/interfaz_pelu/imagenes/BACK (1).png"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                     <BevelBorder/>
                   </Border>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="homeBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="cc" red="99" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Black" size="12" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/interfaz_pelu/imagenes/gestion (1).png"/>
+                </Property>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+                    <BevelBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeBtnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

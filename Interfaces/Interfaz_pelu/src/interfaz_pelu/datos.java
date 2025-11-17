@@ -4,19 +4,27 @@
  */
 package interfaz_pelu;
 
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Carlos
  */
-public class datos extends javax.swing.JFrame {
+public class Datos extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(datos.class.getName());
+    private static Conexion cx;
+    private static Index i;
+    private static Gestion g;
 
     /**
      * Creates new form datos
      */
-    public datos() {
+    public Datos() {
         initComponents();
+        cx = new Conexion();
     }
 
     /**
@@ -32,12 +40,19 @@ public class datos extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaClientes = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaPeluqueras = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaServicios = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaProductos = new javax.swing.JTable();
+        backBtn = new javax.swing.JButton();
+        homeBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,73 +64,265 @@ public class datos extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 255));
 
+        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "id_cliente", "Nombre", "Apellido", "Numero Visitas", "Vip"
+            }
+        ));
+        tablaClientes.setShowHorizontalLines(true);
+        tablaClientes.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(tablaClientes);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("CLIENTES", jPanel3);
 
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
 
+        tablaPeluqueras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablaPeluqueras.setShowGrid(false);
+        tablaPeluqueras.setShowHorizontalLines(true);
+        tablaPeluqueras.setShowVerticalLines(true);
+        jScrollPane2.setViewportView(tablaPeluqueras);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("PELUQUERAS", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(153, 204, 255));
 
+        tablaServicios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablaServicios.setShowHorizontalLines(true);
+        tablaServicios.setShowVerticalLines(true);
+        jScrollPane3.setViewportView(tablaServicios);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("SERVICIOS", jPanel5);
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 255));
 
+        tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablaProductos.setShowHorizontalLines(true);
+        tablaProductos.setShowVerticalLines(true);
+        jScrollPane4.setViewportView(tablaProductos);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("PRODUCTOS", jPanel6);
+
+        backBtn.setBackground(new java.awt.Color(153, 204, 255));
+        backBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        backBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/BACK (1).png"))); // NOI18N
+        backBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
+
+        homeBtn.setBackground(new java.awt.Color(153, 204, 255));
+        homeBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        homeBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz_pelu/imagenes/home (1).png"))); // NOI18N
+        homeBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        homeBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -128,14 +335,6 @@ public class datos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        jMenu1.setText("Volver");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Simulación");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,24 +351,98 @@ public class datos extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        this.dispose();
+        try {
+            g.abrirGestion();
+        } catch (SQLException ex) {
+            System.getLogger(Datos.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        i.abrirIndex();
+    }//GEN-LAST:event_homeBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public void abrirDatos() {
+    public void abrirDatos() throws SQLException{
         //java.awt.EventQueue.invokeLater(() -> new datos().setVisible(true));
         this.setVisible(true);
+        i = new Index();
+        g = new Gestion();
+        datosClientes();
+        datosPeluqueras();
+        datosServicios();
+        datosProductos();
     }
 
+    public void datosClientes() throws SQLException {
+        String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "Nº Visitas", "VIP"};
+        List<Object[]> datosClientes = cx.Clientes();
+        Object[][] datosArray = new Object[datosClientes.size()][nombresColumnas.length];
+        for (int i = 0; i < datosClientes.size(); i++) {
+            datosArray[i] = datosClientes.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaClientes.setModel(modelo);
+        tablaClientes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+    public void datosPeluqueras() throws SQLException {
+        String[] nombresColumnas = {"ID Peluquera", "Años de experiencia", "Nombre", "Especialidad", "Estado"};
+        List<Object[]> datosPeluqueras = cx.Peluqueras();
+        Object[][] datosArray = new Object[datosPeluqueras.size()][nombresColumnas.length];
+        for (int i = 0; i < datosPeluqueras.size(); i++) {
+            datosArray[i] = datosPeluqueras.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaPeluqueras.setModel(modelo);
+        tablaPeluqueras.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+    public void datosServicios() throws SQLException {
+        String[] nombresColumnas = {"ID Servicio", "Nombre", "Precio", "Duracion", "Requiere producto", "Id Peluquera"};
+        List<Object[]> datosServicios = cx.Servicios();
+        Object[][] datosArray = new Object[datosServicios.size()][nombresColumnas.length];
+        for (int i = 0; i < datosServicios.size(); i++) {
+            datosArray[i] = datosServicios.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaServicios.setModel(modelo);
+        tablaServicios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+    public void datosProductos() throws SQLException {
+        String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor"};
+        List<Object[]> datosProductos = cx.Productos();
+        Object[][] datosArray = new Object[datosProductos.size()][nombresColumnas.length];
+        for (int i = 0; i < datosProductos.size(); i++) {
+            datosArray[i] = datosProductos.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaProductos.setModel(modelo);
+        tablaProductos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton homeBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable tablaClientes;
+    private javax.swing.JTable tablaPeluqueras;
+    private javax.swing.JTable tablaProductos;
+    private javax.swing.JTable tablaServicios;
     // End of variables declaration//GEN-END:variables
 }
