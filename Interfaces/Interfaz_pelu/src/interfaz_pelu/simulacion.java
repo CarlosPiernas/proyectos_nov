@@ -154,7 +154,7 @@ public class Simulacion extends javax.swing.JFrame {
 
         pausa_Btn.setBackground(new java.awt.Color(153, 204, 255));
         pausa_Btn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        pausa_Btn.setText("PAUSAR / REINICIAR");
+        pausa_Btn.setText("PAUSAR");
         pausa_Btn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         pausa_Btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,6 +360,9 @@ public class Simulacion extends javax.swing.JFrame {
 
     private void pausa_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausa_BtnActionPerformed
         // TODO add your handling code here:
+        if(pausa_Btn.isSelected()){
+        pausa_Btn.setText("REINICIAR");}
+        else pausa_Btn.setText("PAUSAR");
     }//GEN-LAST:event_pausa_BtnActionPerformed
 
     private void fin_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fin_BtnActionPerformed
