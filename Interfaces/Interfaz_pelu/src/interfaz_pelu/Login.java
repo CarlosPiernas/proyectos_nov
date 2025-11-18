@@ -10,11 +10,15 @@ package interfaz_pelu;
  */
 public class Login extends javax.swing.JFrame {
     
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
+    //Se declara la variable log que se utiliza para determinar si es administrador o empleado
     private static int log;
+    //Se declara el objeto Index
     private static Index i;
-
+    
+    //Metodo get de la variable log
     public static int getLog() {
+        //devuelve el valor de la variable log
         return log;
     }
 
@@ -175,23 +179,29 @@ public class Login extends javax.swing.JFrame {
     private void borrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_borrarBtnActionPerformed
-
+    //Acción del boton iniciar
     private void iniciarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarBtnActionPerformed
         // TODO add your handling code here:
+        //En caso de seleccionar administrador en el comboBox realizará lo siguiente
         if (tipoUsu.getSelectedItem()=="Administrador") {
             log = 0;
+            //En caso de seleccionar empleado en el comboBox realizará lo siguiente
         } else{
             log = 1;}
+        //Se cierra esta pestaña
         this.dispose();
+        //Se crea el objeto Index
         i=new Index();
+        //Se llama al metodo abrirIndex para abrir la pestaña del Index
         i.abrirIndex();
     }//GEN-LAST:event_iniciarBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
+    //Metodo que abre el index
     public void abrirLogin(){
+        //abre esta pestaña
          java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
     }
 

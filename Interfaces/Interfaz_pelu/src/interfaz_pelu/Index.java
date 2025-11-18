@@ -13,10 +13,15 @@ import java.sql.SQLException;
 public class Index extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Index.class.getName());
+    //Se declara el objeto Gestion
     private static Gestion g;
+    //Se declara el objeto Simulacion
     private static Simulacion s;
+    //Se declara el objeto Login
     private static Login l;
+    //Se declara el objeto PupupGest
     private static PopupGest p;
+    //Se declara el objeto Conexion
     private static Conexion cx;
     
     /**
@@ -113,25 +118,31 @@ public class Index extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    //Accion que hace el boton de simulacion
     private void sim_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sim_BtnActionPerformed
         // TODO add your handling code here:
         System.out.println("Funciona el boton simulacion");
+        //Se cierra la pestaña actual
         this.dispose();
+        //Se llama al metodo abrirSimulacion para abrir la pantalla de simulacion
         s.abrirSimulacion();
     }//GEN-LAST:event_sim_BtnActionPerformed
-
+    //Accion que hace el boton de gestion
     private void gest_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gest_BtnActionPerformed
-        // TODO add your handling code here:
+        //En caso de que sea administrador ejecutará lo siguiente
         if (l.getLog() == 0) {
             System.out.println("Funciona el boton gestion");
+            //Se cierra la pestaña actual
             this.dispose();
             try {
+                //Se llama al metodo abrirGestion para abrir la pantalla de gestion
                 g.abrirGestion();
             } catch (SQLException ex) {
                 System.getLogger(Index.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
             }
+            //Si es empleado hará lo siguiente
         } else {
+            //Se llama al metodo abrirPopup para abrir el Pop up
             p.abrirPopup();
         }
 
@@ -140,6 +151,7 @@ public class Index extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    //Metodo main donde se inicia el programa
     public static void main(String args[]) throws SQLException{
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -160,23 +172,30 @@ public class Index extends javax.swing.JFrame {
 
         /* Create and display the form */
         System.out.println("Se inicia el programa");
+        //Se crea el objeto gestion
         System.out.println("Creamos el objeto gestion");
         g = new Gestion();
+        //Se crea el objeto Simulacion
         System.out.println("creamos el objeto simulacion");
         s = new Simulacion();
+        //Se crea el objeto Login
         System.out.println("Creamos el objeto login");
         l = new Login();
+        //Se llama al metodo abrirLogin para abrir la pantalla de Login
         l.abrirLogin();
+        //Se crea el objeto PopUp
         System.out.println("Creamos el objeto Popup");
         p = new PopupGest();
+        //Se crea el objeto Conexion
         System.out.println("Creamos el objeto conexion");
         cx = new Conexion();
         //cx.Clientes();
         
     }
-
+    //Metodo que abre el index
     public void abrirIndex() {
         System.out.println(l.getLog());
+        //abre esta pestaña
         java.awt.EventQueue.invokeLater(() -> new Index().setVisible(true));
     }
 
