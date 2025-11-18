@@ -17,11 +17,11 @@ public class Facturas {
         System.out.println("Empiezo con la tabla Citas");
     try {
             //Crea el archivo donde se van a escribir los datos
-            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\facturas_Tabla.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Carlos\\Desktop\\facturas_Tabla.txt"));
             
             // Se generan los 1000 datos
             String met;
-            for (int i = 1; i <= 500; i++) {
+            for (int i = 1; i <= 2500; i++) {
                  if (i % 2 == 0) {
                 met = "tarjeta";
             } else if(i%3 == 0){

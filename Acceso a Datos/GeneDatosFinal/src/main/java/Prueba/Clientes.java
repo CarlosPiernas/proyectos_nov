@@ -20,8 +20,8 @@ public class Clientes {
     try {
         String nombres[] = new String[100];
         String apellidos[] = new String[100];
-        String rutaN = "C:\\Users\\Alumno\\Desktop\\Nombres.txt";
-            String rutaA = "C:\\Users\\Alumno\\Desktop\\Apellidos.txt";
+        String rutaN = "C:\\Users\\Carlos\\Desktop\\Nombres.txt";
+            String rutaA = "C:\\Users\\Carlos\\Desktop\\Apellidos.txt";
             FileReader fr1 = new FileReader(rutaN);
             BufferedReader br1 = new BufferedReader(fr1);
             FileReader fr2 = new FileReader(rutaA);
@@ -33,20 +33,21 @@ public class Clientes {
                 //System.out.println(apellidos[i]);
             }
             
-            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\Clientes_Tabla.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Carlos\\Desktop\\Clientes_Tabla.txt"));
             
             // Se generan los 1000 datos
             for (int i = 1; i <= 500; i++) {
                 int numero = (int)(Math.random() * 100);
-                String fecha = ((int) (Math.random() * 28) + 1) + "/" + ((int) (Math.random() * 12) + 1) + "/" + 2024;
+                int numero2 = (int)(Math.random() * 100);
+                String fecha = ((int) (Math.random() * 28) + 1) + "/" + ((int) (Math.random() * 12) + 1) + "/" + 2025;
                 int visitas = (int) (Math.random() * 10) + 1;
                 int vip;
-            if (i % 4 == 0) {
+            if (i % 50 == 0) {
                 vip = 1;
             } else {
                 vip = 0;
             }
-            bw.write(i + "," + nombres[numero] + "," + apellidos[numero] + "," + visitas + "," + vip);
+            bw.write(i + "," + nombres[numero] + "," + apellidos[numero2] + "," + visitas + "," + vip + "," + fecha);
             bw.newLine();
         }
 

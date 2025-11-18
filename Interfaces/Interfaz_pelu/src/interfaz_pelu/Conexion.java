@@ -17,7 +17,7 @@ import java.util.List;
  * @author Alumno
  */
 public class Conexion {
-
+    //se declara el objeto connection
     private static Connection connection;
     
     //constructor
@@ -27,8 +27,11 @@ public class Conexion {
 
     //conexion --> devuelve array clientes
     public List<Object[]> Clientes() throws SQLException {
+        //crea el String url donde pone la direccion de la base de datos
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
+        //se conecta con la base de datos mediante la libreria DriverManager pasando por parametro la url el usuario y la contraseña
         connection = DriverManager.getConnection(url, "postgres", "3434");
+        //Crea el ArrayList de objetos
         List<Object[]> datosClientes = new ArrayList<>();
         String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip FROM clientes ORDER BY id_cliente";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
@@ -44,7 +47,7 @@ public class Conexion {
         }
         return datosClientes;
     }
-        //conexion --> devuelve array Peklu
+        //conexion --> devuelve array Peluquera
     public List<Object[]> Peluqueras() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -63,6 +66,7 @@ public class Conexion {
         }
         return datosPeluqueras;
     }
+    //conexion --> devuelve array servicios
     public List<Object[]> Servicios() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -82,23 +86,26 @@ public class Conexion {
         }
         return datosServicios;
     }
+    //conexion --> devuelve array productos
     public List<Object[]> Productos() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosProductos = new ArrayList<>();
-        String query = "SELECT id_producto, producto, stock, proveedor FROM inventario ORDER BY id_producto";
+        String query = "SELECT id_producto, producto, stock_actual, proveedor, stock_max FROM inventario ORDER BY id_producto";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[4];
+                Object[] fila = new Object[5];
                 fila[0] = rs.getString("id_producto");
                 fila[1] = rs.getString("producto");
-                fila[2] = rs.getString("stock");
+                fila[2] = rs.getString("stock_actual");
                 fila[3] = rs.getString("proveedor"); 
+                fila[4] = rs.getString("stock_max");
                 datosProductos.add(fila);
             }//poner catch de excepcion con popup por si falla   
         }
         return datosProductos;
     }
+    //conexion --> devuelve array serviciosRentables
     public List<Object[]> ServiciosRentables() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -118,6 +125,7 @@ public class Conexion {
         }
         return datosServiciosRentables;
     }
+    //conexion --> devuelve array clientesVip
     public List<Object[]> ClientesVip() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -136,18 +144,20 @@ public class Conexion {
         }
         return datosClientesVip;
     }
+    //conexion --> devuelve array StockBajo
     public List<Object[]> StockBajo() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosStockBajo = new ArrayList<>();
-        String query = "SELECT id_producto, producto, stock, proveedor FROM inventario WHERE stock < 5";
+        String query = "SELECT id_producto, producto, stock_actual, proveedor, stock_max FROM inventario WHERE stock_actual < 5";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[4];
+                Object[] fila = new Object[5];
                 fila[0] = rs.getString("id_producto");
                 fila[1] = rs.getString("producto");
-                fila[2] = rs.getString("stock");
+                fila[2] = rs.getString("stock_actual");
                 fila[3] = rs.getString("proveedor"); 
+                fila[4] = rs.getString("stock_max");
                 datosStockBajo.add(fila);
             }//poner catch de excepcion con popup por si falla   
             

@@ -17,13 +17,14 @@ public class Citas {
         System.out.println("Empiezo con la tabla Citas");
     try {
             //Crea el archivo donde se van a escribir los datos
-            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\Citas_Tabla.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Carlos\\Desktop\\Citas_Tabla.txt"));
             
             // Se generan los 1000 datos
-            for (int i = 1; i <= 50; i++) {
+            for (int i = 1; i <= 2500; i++) {
                 String fecha = ((int) (Math.random() * 28) + 1) + "/" + ((int) (Math.random() * 12) + 1) + "/" + 2025;
+                int idc = ((int)(Math.random() * 500) + 1);
                 double precio = (Math.random() * 15) + 5;
-                bw.write(i + "," + fecha + "," + precio);
+                bw.write(i + "," + fecha + "," + precio + "," + i + "," + idc);
                 bw.newLine();
             }
 

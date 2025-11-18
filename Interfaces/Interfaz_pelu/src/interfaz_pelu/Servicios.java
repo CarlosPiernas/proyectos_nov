@@ -273,7 +273,7 @@ public class Servicios extends javax.swing.JFrame {
         tablaVip.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
     public void datosStockBajo() throws SQLException {
-        String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor"};
+        String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor", "Stock Máximo"};
         List<Object[]> datosStockBajo = cx.StockBajo();
         Object[][] datosArray = new Object[datosStockBajo.size()][nombresColumnas.length];
         for (int i = 0; i < datosStockBajo.size(); i++) {

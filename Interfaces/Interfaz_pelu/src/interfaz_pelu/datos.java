@@ -422,7 +422,7 @@ public class Datos extends javax.swing.JFrame {
         tablaServicios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
     public void datosProductos() throws SQLException {
-        String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor"};
+        String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor", "Stock Máximo"};
         List<Object[]> datosProductos = cx.Productos();
         Object[][] datosArray = new Object[datosProductos.size()][nombresColumnas.length];
         for (int i = 0; i < datosProductos.size(); i++) {

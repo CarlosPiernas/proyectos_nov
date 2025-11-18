@@ -39,6 +39,7 @@ public class Clientes {
             // Se generan los 1000 datos
             for (int i = 1; i <= 500; i++) {
                 int numero = (int)(Math.random() * 100);
+                int numero2 = (int)(Math.random() * 100);
                 String fecha = ((int) (Math.random() * 28) + 1) + "/" + ((int) (Math.random() * 12) + 1) + "/" + 2024;
                 int visitas = (int) (Math.random() * 10) + 1;
                 int vip;
@@ -47,7 +48,7 @@ public class Clientes {
             } else {
                 vip = 0;
             }
-            bw.write(i + "," + nombres[numero] + "," + apellidos[numero] + "," + visitas + "," + vip);
+            bw.write(i + "," + nombres[numero] + "," + apellidos[numero2] + "," + visitas + "," + vip);
             bw.newLine();
         }
 

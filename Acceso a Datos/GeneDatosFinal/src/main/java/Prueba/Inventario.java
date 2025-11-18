@@ -19,7 +19,7 @@ public class Inventario {
         System.out.println("Empiezo con la tabla Inventario");
     try {
         String productos[] = new String[15];
-        String rutaN = "C:\\Users\\Alumno\\Desktop\\Productos.txt";
+        String rutaN = "C:\\Users\\Carlos\\Desktop\\Productos.txt";
             FileReader fr1 = new FileReader(rutaN);
             BufferedReader br1 = new BufferedReader(fr1);
             for (int i=0;i<15;i++){
@@ -27,7 +27,7 @@ public class Inventario {
                 //System.out.println(nombres[i]);
         }
         //Crea el archivo donde se van a escribir los datos
-        BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\inventario_Tabla.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Carlos\\Desktop\\inventario_Tabla.txt"));
         String proveedor;
         // Se generan los 1000 datos
         for (int i = 0; i <= 14; i++) {
@@ -41,7 +41,8 @@ public class Inventario {
                 proveedor = "Saylu";
             }
             int stock = (int) (Math.random() * 20);
-            bw.write((i+1) + "," + productos[i] + "," + stock + "," + proveedor);
+            int stockF = (int) (Math.random() * (25 - 20 + 1)) + 20;
+            bw.write((i+1) + "," + productos[i] + "," + stock + "," + proveedor + "," + stockF);
             bw.newLine();
         }
 
