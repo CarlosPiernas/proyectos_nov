@@ -20,10 +20,12 @@ public class Conexion {
 
     private static Connection connection;
     
+    //constructor
     public void Conexion() throws SQLException {
          
     }
 
+    //conexion --> devuelve array clientes
     public List<Object[]> Clientes() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -42,6 +44,7 @@ public class Conexion {
         }
         return datosClientes;
     }
+        //conexion --> devuelve array Peklu
     public List<Object[]> Peluqueras() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
@@ -64,7 +67,7 @@ public class Conexion {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosServicios = new ArrayList<>();
-        String query = "SELECT id_servicio, nombre, precio, duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY id_servicio";
+        String query = "SELECT id_servicio, nombre, CAST(PRECIO AS DECIMAL(10,2)), duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY id_servicio";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 Object[] fila = new Object[6];
@@ -100,7 +103,7 @@ public class Conexion {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosServiciosRentables = new ArrayList<>();
-        String query = "SELECT id_servicio, nombre, precio, duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY precio DESC";
+        String query = "SELECT id_servicio, nombre, CAST(PRECIO AS DECIMAL(10,2)), duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY precio DESC";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 Object[] fila = new Object[6];
@@ -147,6 +150,7 @@ public class Conexion {
                 fila[3] = rs.getString("proveedor"); 
                 datosStockBajo.add(fila);
             }//poner catch de excepcion con popup por si falla   
+            
         }
         return datosStockBajo;
     }

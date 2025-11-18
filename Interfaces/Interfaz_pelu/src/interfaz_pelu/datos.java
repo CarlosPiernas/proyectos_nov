@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Carlos
  */
+
+
 public class Datos extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(datos.class.getName());
@@ -22,6 +24,7 @@ public class Datos extends javax.swing.JFrame {
     /**
      * Creates new form datos
      */
+//cons
     public Datos() {
         initComponents();
         cx = new Conexion();
@@ -171,6 +174,7 @@ public class Datos extends javax.swing.JFrame {
                 "id_cliente", "Nombre", "Apellido", "Numero Visitas", "Vip"
             }
         ));
+        tablaClientes.setEnabled(false);
         tablaClientes.setShowHorizontalLines(true);
         tablaClientes.setShowVerticalLines(true);
         jScrollPane1.setViewportView(tablaClientes);
@@ -201,6 +205,7 @@ public class Datos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaPeluqueras.setEnabled(false);
         tablaPeluqueras.setShowGrid(false);
         tablaPeluqueras.setShowHorizontalLines(true);
         tablaPeluqueras.setShowVerticalLines(true);
@@ -232,6 +237,7 @@ public class Datos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaServicios.setEnabled(false);
         tablaServicios.setShowHorizontalLines(true);
         tablaServicios.setShowVerticalLines(true);
         jScrollPane3.setViewportView(tablaServicios);
@@ -262,6 +268,7 @@ public class Datos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaProductos.setEnabled(false);
         tablaProductos.setShowHorizontalLines(true);
         tablaProductos.setShowVerticalLines(true);
         jScrollPane4.setViewportView(tablaProductos);
@@ -378,6 +385,7 @@ public class Datos extends javax.swing.JFrame {
         datosPeluqueras();
         datosServicios();
         datosProductos();
+        
     }
 
     public void datosClientes() throws SQLException {

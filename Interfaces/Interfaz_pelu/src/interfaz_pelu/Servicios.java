@@ -71,6 +71,7 @@ public class Servicios extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaServicios.setEnabled(false);
         tablaServicios.setShowHorizontalLines(true);
         tablaServicios.setShowVerticalLines(true);
         jScrollPane4.setViewportView(tablaServicios);
@@ -101,6 +102,7 @@ public class Servicios extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaVip.setEnabled(false);
         tablaVip.setShowHorizontalLines(true);
         tablaVip.setShowVerticalLines(true);
         jScrollPane2.setViewportView(tablaVip);
@@ -131,6 +133,7 @@ public class Servicios extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tablaStock.setEnabled(false);
         tablaStock.setShowHorizontalLines(true);
         tablaStock.setShowVerticalLines(true);
         jScrollPane3.setViewportView(tablaStock);
@@ -188,7 +191,7 @@ public class Servicios extends javax.swing.JFrame {
                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 

@@ -77,7 +77,7 @@
                           <Component id="homeBtn" alignment="0" min="-2" pref="51" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTabbedPane1" pref="531" max="32767" attributes="0"/>
+                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -138,6 +138,7 @@
                                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="showHorizontalLines" type="boolean" value="true"/>
                             <Property name="showVerticalLines" type="boolean" value="true"/>
                           </Properties>
@@ -190,6 +191,7 @@
                                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="showHorizontalLines" type="boolean" value="true"/>
                             <Property name="showVerticalLines" type="boolean" value="true"/>
                           </Properties>
@@ -242,6 +244,7 @@
                                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="showHorizontalLines" type="boolean" value="true"/>
                             <Property name="showVerticalLines" type="boolean" value="true"/>
                           </Properties>

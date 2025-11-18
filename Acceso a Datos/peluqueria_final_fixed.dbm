@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
  Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,0" last-zoom="1" max-obj-count="7"
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="168,179" last-zoom="0.9" max-obj-count="7"
 	 default-owner="postgres"
 	 layers="Default layer"
 	 active-layers="0"
@@ -118,7 +118,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="inventario" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+<table name="inventario" layers="0" collapse-mode="2" max-obj-count="6" z-value="0">
 	<schema name="public"/>
 	<role name="postgres"/>
 	<position x="1240" y="360"/>
@@ -128,11 +128,14 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="producto">
 		<type name="text" length="0"/>
 	</column>
-	<column name="stock">
+	<column name="stock_actual">
 		<type name="integer" length="0"/>
 	</column>
 	<column name="proveedor">
 		<type name="text" length="0"/>
+	</column>
+	<column name="stock_max">
+		<type name="integer" length="0"/>
 	</column>
 	<constraint name="inventario_pk" type="pk-constr" table="public.inventario">
 		<columns names="id_producto" ref-type="src-columns"/>
