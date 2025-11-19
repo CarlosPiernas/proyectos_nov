@@ -34,7 +34,7 @@ FROM
 JOIN
     citas c ON cl.id_cliente = c.id_cliente_clientes
 WHERE
-    c.fecha >= DATE '2025-12-30' - INTERVAL '10 months'
+    c.fecha >= DATE '2025-12-30' - INTERVAL '3 months'
 GROUP BY
     cl.id_cliente, cl.nombre, cl.apellido
 HAVING
@@ -51,9 +51,9 @@ SELECT
 FROM
     servicios s
 JOIN
-    many_citas_has_many_servicios mchs ON s.id_servicio = mchs.id_servicio_servicios
+    citas_servicios cs ON s.id_servicio = cs.id_servicio_servicios
 JOIN
-    citas c ON mchs.id_cita_citas = c.id_cita
+    citas c ON cs.id_cita_citas = c.id_cita
 GROUP BY
     s.nombre
 ORDER BY

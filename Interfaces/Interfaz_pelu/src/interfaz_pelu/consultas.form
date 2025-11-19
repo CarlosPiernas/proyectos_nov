@@ -63,7 +63,7 @@
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -115,12 +115,14 @@
                   <Color blue="ff" green="cc" red="99" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
+                  <StringArray count="7">
                     <StringItem index="0" value="RANKING DE CLIENTES CON M&#xc1;S VISITAS"/>
                     <StringItem index="1" value="RANKING DE SERVICIOS M&#xc1;S SOLICITADOS"/>
                     <StringItem index="2" value="RANKING DE DIAS CON M&#xc1;S CITAS"/>
                     <StringItem index="3" value="RANKING DE CITAS M&#xc1;S CARAS"/>
-                    <StringItem index="4" value="RANKING DE PRODUCTOS M&#xc1;S UTILIZADOS"/>
+                    <StringItem index="4" value="CLIENTES QUE HAN PAGADO CON TARJETA"/>
+                    <StringItem index="5" value="CLIENTES QUE HAN PAGADO CON EFECTIVO"/>
+                    <StringItem index="6" value="CLIENTES QUE HAN PAGADO CON TARJETA DE COMPRA DEL CORTE INGLES"/>
                   </StringArray>
                 </Property>
               </Properties>

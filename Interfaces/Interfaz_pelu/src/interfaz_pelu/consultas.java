@@ -46,7 +46,7 @@ public class Consultas extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
 
         jComboBox1.setBackground(new java.awt.Color(153, 204, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RANKING DE CLIENTES CON MÁS VISITAS", "RANKING DE SERVICIOS MÁS SOLICITADOS", "RANKING DE DIAS CON MÁS CITAS", "RANKING DE CITAS MÁS CARAS", "RANKING DE PRODUCTOS MÁS UTILIZADOS" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RANKING DE CLIENTES CON MÁS VISITAS", "RANKING DE SERVICIOS MÁS SOLICITADOS", "RANKING DE DIAS CON MÁS CITAS", "RANKING DE CITAS MÁS CARAS", "CLIENTES QUE HAN PAGADO CON TARJETA", "CLIENTES QUE HAN PAGADO CON EFECTIVO", "CLIENTES QUE HAN PAGADO CON TARJETA DE COMPRA DEL CORTE INGLES" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -102,7 +102,7 @@ public class Consultas extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
