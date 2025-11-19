@@ -389,7 +389,7 @@ public class Datos extends javax.swing.JFrame {
     }
 
     public void datosClientes() throws SQLException {
-        String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "Nº Visitas", "VIP"};
+        String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "Nº Visitas", "VIP", "Fecha de alta"};
         List<Object[]> datosClientes = cx.Clientes();
         Object[][] datosArray = new Object[datosClientes.size()][nombresColumnas.length];
         for (int i = 0; i < datosClientes.size(); i++) {

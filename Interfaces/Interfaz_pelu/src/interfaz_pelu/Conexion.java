@@ -33,15 +33,16 @@ public class Conexion {
         connection = DriverManager.getConnection(url, "postgres", "3434");
         //Crea el ArrayList de objetos
         List<Object[]> datosClientes = new ArrayList<>();
-        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip FROM clientes ORDER BY id_cliente";
+        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip, fecha_alta FROM clientes ORDER BY id_cliente";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[5];
+                Object[] fila = new Object[6];
                 fila[0] = rs.getString("id_cliente");
                 fila[1] = rs.getString("nombre");
                 fila[2] = rs.getString("apellido");
                 fila[3] = rs.getInt("num_visitas"); // Es mejor obtener un entero si es un número
                 fila[4] = rs.getBoolean("vip");
+                fila[5] = rs.getString("fecha_alta");
                 datosClientes.add(fila);
             }//poner catch de excepcion con popup por si falla   
         }
@@ -130,15 +131,16 @@ public class Conexion {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosClientesVip = new ArrayList<>();
-        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip FROM clientes WHERE vip = true";
+        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip, fecha_alta FROM clientes WHERE vip = true";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[5];
+                Object[] fila = new Object[6];
                 fila[0] = rs.getString("id_cliente");
                 fila[1] = rs.getString("nombre");
                 fila[2] = rs.getString("apellido");
                 fila[3] = rs.getInt("num_visitas"); // Es mejor obtener un entero si es un número
                 fila[4] = rs.getBoolean("vip");
+                fila[5] = rs.getString("fecha_alta");
                 datosClientesVip.add(fila);
             }//poner catch de excepcion con popup por si falla   
         }

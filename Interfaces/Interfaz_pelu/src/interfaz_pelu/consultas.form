@@ -52,18 +52,18 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="backBtn" min="-2" pref="81" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="homeBtn" min="-2" pref="81" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -95,7 +95,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="895" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="843" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -115,22 +115,12 @@
                   <Color blue="ff" green="cc" red="99" type="rgb"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="15">
-                    <StringItem index="0" value="TOP PELUQUERAS M&#xc1;S ACTIVAS"/>
-                    <StringItem index="1" value="CLIENTES FRECUENTES"/>
-                    <StringItem index="2" value="SERVICIOS M&#xc1;S RENTABLES"/>
-                    <StringItem index="3" value="PROMEDIO DE DURACI&#xd3;N"/>
-                    <StringItem index="4" value="STOCK CR&#xcd;TICO"/>
-                    <StringItem index="5" value="CLEIENTES VIP"/>
-                    <StringItem index="6" value="INGRESOS POR D&#xcd;A"/>
-                    <StringItem index="7" value="SERVICIOS COMBINADOS"/>
-                    <StringItem index="8" value="RANKING DE PRODUCTIVIDAD"/>
-                    <StringItem index="9" value="DURACI&#xd3;N TOTAL DE JORNADA"/>
-                    <StringItem index="10" value="CLIENTES INACTIVOS"/>
-                    <StringItem index="11" value="DESCUENTO AUTOM&#xc1;TICO"/>
-                    <StringItem index="12" value="USO DE PRODUCTOS"/>
-                    <StringItem index="13" value="INGRESOS POR M&#xc9;TODO DE PAGO"/>
-                    <StringItem index="14" value="SERVICIOS M&#xc1;S LARGOS"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="RANKING DE CLIENTES CON M&#xc1;S VISITAS"/>
+                    <StringItem index="1" value="RANKING DE SERVICIOS M&#xc1;S SOLICITADOS"/>
+                    <StringItem index="2" value="RANKING DE DIAS CON M&#xc1;S CITAS"/>
+                    <StringItem index="3" value="RANKING DE CITAS M&#xc1;S CARAS"/>
+                    <StringItem index="4" value="RANKING DE PRODUCTOS M&#xc1;S UTILIZADOS"/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -262,7 +262,7 @@ public class Servicios extends javax.swing.JFrame {
         tablaServicios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
     public void datosClientesVip() throws SQLException {
-        String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "Nº Visitas", "VIP"};
+        String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "Nº Visitas", "VIP", "Fecha de alta"};
         List<Object[]> datosClientes = cx.ClientesVip();
         Object[][] datosArray = new Object[datosClientes.size()][nombresColumnas.length];
         for (int i = 0; i < datosClientes.size(); i++) {
