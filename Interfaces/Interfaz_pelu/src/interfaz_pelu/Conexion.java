@@ -33,16 +33,15 @@ public class Conexion {
         connection = DriverManager.getConnection(url, "postgres", "3434");
         //Crea el ArrayList de objetos
         List<Object[]> datosClientes = new ArrayList<>();
-        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip, fecha_alta FROM clientes ORDER BY id_cliente";
+        String query = "SELECT id_cliente, nombre, apellido, vip, fecha_alta FROM clientes ORDER BY id_cliente";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[6];
+                Object[] fila = new Object[5];
                 fila[0] = rs.getString("id_cliente");
                 fila[1] = rs.getString("nombre");
                 fila[2] = rs.getString("apellido");
-                fila[3] = rs.getInt("num_visitas"); // Es mejor obtener un entero si es un número
-                fila[4] = rs.getBoolean("vip");
-                fila[5] = rs.getString("fecha_alta");
+                fila[3] = rs.getBoolean("vip");
+                fila[4] = rs.getString("fecha_alta");
                 datosClientes.add(fila);
             }//poner catch de excepcion con popup por si falla   
         }
@@ -131,16 +130,15 @@ public class Conexion {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
         List<Object[]> datosClientesVip = new ArrayList<>();
-        String query = "SELECT id_cliente, nombre, apellido, num_visitas, vip, fecha_alta FROM clientes WHERE vip = true";
+        String query = "SELECT id_cliente, nombre, apellido, vip, fecha_alta FROM clientes WHERE vip = true";
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
-                Object[] fila = new Object[6];
+                Object[] fila = new Object[5];
                 fila[0] = rs.getString("id_cliente");
                 fila[1] = rs.getString("nombre");
                 fila[2] = rs.getString("apellido");
-                fila[3] = rs.getInt("num_visitas"); // Es mejor obtener un entero si es un número
-                fila[4] = rs.getBoolean("vip");
-                fila[5] = rs.getString("fecha_alta");
+                fila[3] = rs.getBoolean("vip");
+                fila[4] = rs.getString("fecha_alta");
                 datosClientesVip.add(fila);
             }//poner catch de excepcion con popup por si falla   
         }
@@ -165,6 +163,23 @@ public class Conexion {
             
         }
         return datosStockBajo;
+    }
+    public List<Object[]> clientesTarjeta() throws SQLException {
+        String url = "jdbc:postgresql://localhost:5432/peluqueria";
+        connection = DriverManager.getConnection(url, "postgres", "3434");
+        List<Object[]> datosClientesTarjeta = new ArrayList<>();
+        String query = "SELECT distinct nombre, apellido, metodo_pago FROM clientesTarjeta";
+        try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                Object[] fila = new Object[3];
+                fila[0] = rs.getString("nombre");
+                fila[1] = rs.getString("apellido");
+                fila[2] = rs.getString("metodo_pago");
+                datosClientesTarjeta.add(fila);
+            }//poner catch de excepcion con popup por si falla   
+            
+        }
+        return datosClientesTarjeta;
     }
     
 }
