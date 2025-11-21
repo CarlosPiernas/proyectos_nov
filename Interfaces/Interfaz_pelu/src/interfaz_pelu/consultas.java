@@ -18,6 +18,7 @@ public class Consultas extends javax.swing.JFrame {
     private static Gestion g;
     private static Index i;
     private static Conexion cx;
+
     /**
      * Creates new form consultas
      */
@@ -198,7 +199,7 @@ public class Consultas extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.getLogger(Consultas.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
-        
+
     }//GEN-LAST:event_backBtnActionPerformed
 
     private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
@@ -214,8 +215,29 @@ public class Consultas extends javax.swing.JFrame {
     private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
         try {
             // TODO add your handling code here:
-            if(comboConsulta.getSelectedIndex()==4){
-            datosClientesTarjeta();}
+            switch (comboConsulta.getSelectedIndex()) {
+                case 0:
+                    datosClientesVisitas();
+                    break;
+                case 1:
+                    datosServiciosSolicitados();
+                    break;
+                case 2:
+                    datosDiasCitas();
+                    break;
+                case 3:
+                    datosCitasCaras();
+                    break;
+                case 4:
+                    datosClientesTarjeta();
+                    break;
+                case 5:
+                    datosClientesEfectivo();
+                    break;
+                case 6:
+                    datosClientesCorteIngles();
+                    break;
+            }
         } catch (SQLException ex) {
             System.getLogger(Consultas.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
@@ -231,6 +253,55 @@ public class Consultas extends javax.swing.JFrame {
         g = new Gestion();
         cx = new Conexion();
     }
+
+    public void datosClientesVisitas() throws SQLException {
+        String[] nombresColumnas = {"Nombre", "Apellido", "Visitas totales"};
+        List<Object[]> datosClientesVisitas = cx.clientesVisitas();
+        Object[][] datosArray = new Object[datosClientesVisitas.size()][nombresColumnas.length];
+        for (int i = 0; i < datosClientesVisitas.size(); i++) {
+            datosArray[i] = datosClientesVisitas.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+    public void datosServiciosSolicitados() throws SQLException {
+        String[] nombresColumnas = {"Nombre", "Servicios totales"};
+        List<Object[]> datosServiciosSolicitados = cx.serviciosSolicitados();
+        Object[][] datosArray = new Object[datosServiciosSolicitados.size()][nombresColumnas.length];
+        for (int i = 0; i < datosServiciosSolicitados.size(); i++) {
+            datosArray[i] = datosServiciosSolicitados.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+    public void datosDiasCitas() throws SQLException {
+        String[] nombresColumnas = {"Fecha", "Citas totales"};
+        List<Object[]> datosDiasCitas = cx.diasCitas();
+        Object[][] datosArray = new Object[datosDiasCitas.size()][nombresColumnas.length];
+        for (int i = 0; i < datosDiasCitas.size(); i++) {
+            datosArray[i] = datosDiasCitas.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+    public void datosCitasCaras() throws SQLException {
+        String[] nombresColumnas = {"Id", "Precio", "Nombre", "Apellido"};
+        List<Object[]> datosCitasCaras = cx.citasCaras();
+        Object[][] datosArray = new Object[datosCitasCaras.size()][nombresColumnas.length];
+        for (int i = 0; i < datosCitasCaras.size(); i++) {
+            datosArray[i] = datosCitasCaras.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
     public void datosClientesTarjeta() throws SQLException {
         String[] nombresColumnas = {"Nombre", "Apellido", "Método de pago"};
         List<Object[]> datosClientesTarjeta = cx.clientesTarjeta();
@@ -242,6 +313,31 @@ public class Consultas extends javax.swing.JFrame {
         tablaExtra.setModel(modelo);
         tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
+
+    public void datosClientesEfectivo() throws SQLException {
+        String[] nombresColumnas = {"Nombre", "Apellido", "Método de pago"};
+        List<Object[]> datosClientesEfectivo = cx.clientesEfectivo();
+        Object[][] datosArray = new Object[datosClientesEfectivo.size()][nombresColumnas.length];
+        for (int i = 0; i < datosClientesEfectivo.size(); i++) {
+            datosArray[i] = datosClientesEfectivo.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+    public void datosClientesCorteIngles() throws SQLException {
+        String[] nombresColumnas = {"Nombre", "Apellido", "Método de pago"};
+        List<Object[]> datosClientesCorteIngles = cx.clientesCorteIngles();
+        Object[][] datosArray = new Object[datosClientesCorteIngles.size()][nombresColumnas.length];
+        for (int i = 0; i < datosClientesCorteIngles.size(); i++) {
+            datosArray[i] = datosClientesCorteIngles.get(i);
+        }
+        DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+        tablaExtra.setModel(modelo);
+        tablaExtra.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
