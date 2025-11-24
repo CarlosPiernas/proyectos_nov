@@ -48,8 +48,8 @@ public class Conexion {
         }
         return datosClientes;
     }
+    
     //conexion --> devuelve array Peluquera
-
     public List<Object[]> Peluqueras() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/peluqueria";
         connection = DriverManager.getConnection(url, "postgres", "3434");
