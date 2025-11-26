@@ -9,13 +9,13 @@ package interfaz_pelu;
  * @author Alumno
  */
 public class Login extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
     //Se declara la variable log que se utiliza para determinar si es administrador o empleado
     private static int log;
     //Se declara el objeto Index
     private static Index i;
-    
+
     //Metodo get de la variable log
     public static int getLog() {
         //devuelve el valor de la variable log
@@ -27,7 +27,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        
+
     }
 
     /**
@@ -42,7 +42,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         tipoUsu = new javax.swing.JComboBox<>();
         iniSes = new javax.swing.JLabel();
-        textUsu = new javax.swing.JTextField();
         labelUsu = new javax.swing.JLabel();
         labelContra = new javax.swing.JLabel();
         textContra = new javax.swing.JPasswordField();
@@ -60,12 +59,6 @@ public class Login extends javax.swing.JFrame {
 
         iniSes.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         iniSes.setText("INICIA SESIÓN");
-
-        textUsu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textUsuActionPerformed(evt);
-            }
-        });
 
         labelUsu.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         labelUsu.setText("USUARIO:");
@@ -104,49 +97,40 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelContra)
-                            .addComponent(labelUsu))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(tipoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(textUsu, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                                .addComponent(textContra))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(iniSes)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(141, 141, 141)
+                .addComponent(iniSes)
+                .addContainerGap(135, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addComponent(borrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(iniciarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(95, 95, 95))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelContra)
+                    .addComponent(labelUsu))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textContra, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tipoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(iniSes, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tipoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUsu)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(textUsu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                    .addComponent(tipoUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textContra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelContra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(iniciarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(borrarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -168,41 +152,61 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUsuActionPerformed
+    //Acción del boton iniciar
+    private void iniciarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textUsuActionPerformed
+        //En caso de seleccionar administrador en el comboBox realizará lo siguiente
+        if (tipoUsu.getSelectedItem() == "Administrador" && "1234".equals(textContra.getText())) {
+            log = 0;
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Bienvenido Admin",
+                    "Bienvenido",
+                    javax.swing.JOptionPane.PLAIN_MESSAGE);
+            this.dispose();
+            //Se crea el objeto Index
+            i = new Index();
+            //Se llama al metodo abrirIndex para abrir la pestaña del Index
+            i.abrirIndex();
+            //En caso de seleccionar empleado en el comboBox realizará lo siguiente
+        } else if (tipoUsu.getSelectedItem() == "Empleado" && "1234".equals(textContra.getText())) {
+            log = 1;
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Bienvenido empleado",
+                    "Bienvenido",
+                    javax.swing.JOptionPane.PLAIN_MESSAGE);
+            this.dispose();
+            //Se crea el objeto Index
+            i = new Index();
+            //Se llama al metodo abrirIndex para abrir la pestaña del Index
+            i.abrirIndex();
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "Contraseña incorrecta",
+                    "Error de login",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+        //Se cierra esta pestaña
+
+    }//GEN-LAST:event_iniciarBtnActionPerformed
+
+    private void borrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_borrarBtnActionPerformed
 
     private void textContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textContraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textContraActionPerformed
 
-    private void borrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_borrarBtnActionPerformed
-    //Acción del boton iniciar
-    private void iniciarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarBtnActionPerformed
-        // TODO add your handling code here:
-        //En caso de seleccionar administrador en el comboBox realizará lo siguiente
-        if (tipoUsu.getSelectedItem()=="Administrador") {
-            log = 0;
-            //En caso de seleccionar empleado en el comboBox realizará lo siguiente
-        } else{
-            log = 1;}
-        //Se cierra esta pestaña
-        this.dispose();
-        //Se crea el objeto Index
-        i=new Index();
-        //Se llama al metodo abrirIndex para abrir la pestaña del Index
-        i.abrirIndex();
-    }//GEN-LAST:event_iniciarBtnActionPerformed
-
     /**
      * @param args the command line arguments
      */
     //Metodo que abre el index
-    public void abrirLogin(){
+    public void abrirLogin() {
         //abre esta pestaña
-         java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -213,7 +217,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel labelContra;
     private javax.swing.JLabel labelUsu;
     private javax.swing.JPasswordField textContra;
-    private javax.swing.JTextField textUsu;
     private javax.swing.JComboBox<String> tipoUsu;
     // End of variables declaration//GEN-END:variables
 }
