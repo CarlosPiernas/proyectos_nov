@@ -12,8 +12,6 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Carlos
  */
-
-
 public class Datos extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(datos.class.getName());
@@ -376,7 +374,7 @@ public class Datos extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void abrirDatos() throws SQLException{
+    public void abrirDatos() throws SQLException {
         //java.awt.EventQueue.invokeLater(() -> new datos().setVisible(true));
         this.setVisible(true);
         i = new Index();
@@ -385,7 +383,7 @@ public class Datos extends javax.swing.JFrame {
         datosPeluqueras();
         datosServicios();
         datosProductos();
-        
+
     }
 
     public void datosClientes() throws SQLException {
@@ -399,6 +397,7 @@ public class Datos extends javax.swing.JFrame {
         tablaClientes.setModel(modelo);
         tablaClientes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
+
     public void datosPeluqueras() throws SQLException {
         String[] nombresColumnas = {"ID Peluquera", "Años de experiencia", "Nombre", "Especialidad", "Estado"};
         List<Object[]> datosPeluqueras = cx.Peluqueras();
@@ -410,6 +409,7 @@ public class Datos extends javax.swing.JFrame {
         tablaPeluqueras.setModel(modelo);
         tablaPeluqueras.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
+
     public void datosServicios() throws SQLException {
         String[] nombresColumnas = {"ID Servicio", "Nombre", "Precio", "Duracion", "Requiere producto", "Id Peluquera"};
         List<Object[]> datosServicios = cx.Servicios();
@@ -421,6 +421,7 @@ public class Datos extends javax.swing.JFrame {
         tablaServicios.setModel(modelo);
         tablaServicios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
+
     public void datosProductos() throws SQLException {
         String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor", "Stock Máximo"};
         List<Object[]> datosProductos = cx.Productos();
