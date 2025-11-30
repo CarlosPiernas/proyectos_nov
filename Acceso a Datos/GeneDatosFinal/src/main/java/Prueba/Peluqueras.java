@@ -25,14 +25,11 @@ public class Peluqueras {
             BufferedReader br1 = new BufferedReader(fr1);
             for (int i = 0; i < 100; i++) {
                 nombres[i] = br1.readLine();
-                //System.out.println(nombres[i]);
             }
 
             BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\Peluqueres_Tabla.txt"));
-
-            // Se generan los 1000 datos
             for (int i = 0; i <= 5; i++) {
-                int numero = (int)(Math.random() * 100);
+                int numero = (int) (Math.random() * 100);
                 int anio = (int) (Math.random() * 40) + 1;
                 String esp;
                 String est;
@@ -45,11 +42,13 @@ public class Peluqueras {
                 } else {
                     esp = "Tinte";
                 }
-                if (i % 2 == 0 || i%3==0) {
+                if (i % 2 == 0 || i % 3 == 0) {
                     est = "Disponible";
-                } else est = "Descansando";
+                } else {
+                    est = "Descansando";
+                }
 
-                bw.write((i+1) + "," + anio + "," + nombres[numero] + "," + "," + esp + "," + est);
+                bw.write((i + 1) + "," + anio + "," + nombres[numero] + "," + "," + esp + "," + est);
                 bw.newLine();
             }
 

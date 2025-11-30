@@ -4,6 +4,7 @@
  */
 package interfaz_pelu;
 
+import ConectorBD.Conexion;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -14,17 +15,19 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Datos extends javax.swing.JFrame {
 
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(datos.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Datos.class.getName());
     private static Conexion cx;
+    // Se declara el objeto Index (para ir a la pantalla principal)
     private static Index i;
+    // Se declara el objeto Gestion (para volver a la pantalla anterior)
     private static Gestion g;
 
     /**
      * Creates new form datos
      */
-//cons
     public Datos() {
-        initComponents();
+        initComponents(); // Inicializa los componentes visuales de la interfaz
+        // Se crea el objeto Conexion
         cx = new Conexion();
     }
 
@@ -54,6 +57,7 @@ public class Datos extends javax.swing.JFrame {
         tablaProductos = new javax.swing.JTable();
         backBtn = new javax.swing.JButton();
         homeBtn = new javax.swing.JButton();
+        csvBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -306,6 +310,16 @@ public class Datos extends javax.swing.JFrame {
             }
         });
 
+        csvBtn.setBackground(new java.awt.Color(153, 204, 255));
+        csvBtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        csvBtn.setText("EXPORTAR A CSV");
+        csvBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        csvBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csvBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -316,7 +330,9 @@ public class Datos extends javax.swing.JFrame {
                 .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(csvBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,7 +340,8 @@ public class Datos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(csvBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
@@ -355,30 +372,46 @@ public class Datos extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+// Accion que hace el boton de atras
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // Se cierra la pestaña actual
         this.dispose();
         try {
+            // Se llama al metodo abrirGestion para abrir la pantalla de gestion
             g.abrirGestion();
         } catch (SQLException ex) {
+            // En caso de error de SQL, se registra en el log
             System.getLogger(Datos.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
     }//GEN-LAST:event_backBtnActionPerformed
-
+// Accion que hace el boton de home
     private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
         // TODO add your handling code here:
+        // Se cierra la pestaña actual
         this.dispose();
+        // Se llama al metodo abrirIndex para abrir la pantalla principal
         i.abrirIndex();
     }//GEN-LAST:event_homeBtnActionPerformed
+// Accion que hace el boton de exportar a CSV
+    private void csvBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csvBtnActionPerformed
+        try {
+            // Se llama al metodo exportarDatos del objeto de conexión para exportar las tablas principales
+            cx.exportarDatos();
+        } catch (SQLException ex) {
+            // En caso de error de SQL, se registra en el log
+            System.getLogger(Datos.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }//GEN-LAST:event_csvBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public void abrirDatos() throws SQLException {
-        //java.awt.EventQueue.invokeLater(() -> new datos().setVisible(true));
+        // Muestra esta pestaña
         this.setVisible(true);
+        // Se crea el objeto Index
         i = new Index();
+        // Se crea el objeto Gestion
         g = new Gestion();
+
+        // Se llama a los metodos para cargar los datos en cada una de las tablas
         datosClientes();
         datosPeluqueras();
         datosServicios();
@@ -386,57 +419,114 @@ public class Datos extends javax.swing.JFrame {
 
     }
 
+    //Crea el método datosClientes
     public void datosClientes() throws SQLException {
+        //Crea un arrays con los nombres de las columnas de la tabla
         String[] nombresColumnas = {"ID Cliente", "Nombre", "Apellido", "VIP", "Fecha de alta"};
+
+        //Copia el arrays que devuelve la funcion clientes de la clase cx en un arrays
         List<Object[]> datosClientes = cx.Clientes();
+
+        //Crea un arrays multidimensional con las filas del array copiado y las columnas dadas en nombresColumnas
         Object[][] datosArray = new Object[datosClientes.size()][nombresColumnas.length];
+
+        //Bucle para rellenar el arrays datosArray
         for (int i = 0; i < datosClientes.size(); i++) {
             datosArray[i] = datosClientes.get(i);
         }
+
+        //Crea el modelo de tabla cogiendo los datos de los arrays
         DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+
+        //Hace que la tablaClientes tenga el modelo propuesto antes
         tablaClientes.setModel(modelo);
+
+        //Hace que la tabla haga un autoresize dependiendo del tamaño del arrays
         tablaClientes.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
 
+    //Crea el método datosPeluqueras
     public void datosPeluqueras() throws SQLException {
+        //Crea un arrays con los nombres de las columnas de la tabla
         String[] nombresColumnas = {"ID Peluquera", "Años de experiencia", "Nombre", "Especialidad", "Estado"};
+
+        //Copia el arrays que devuelve la funcion Peluqueras de la clase cx en un arrays
         List<Object[]> datosPeluqueras = cx.Peluqueras();
+
+        //Crea un arrays multidimensional con las filas del array copiado y las columnas dadas en nombresColumnas
         Object[][] datosArray = new Object[datosPeluqueras.size()][nombresColumnas.length];
+
+        //Bucle para rellenar el arrays datosArray
         for (int i = 0; i < datosPeluqueras.size(); i++) {
             datosArray[i] = datosPeluqueras.get(i);
         }
+
+        //Crea el modelo de tabla cogiendo los datos de los arrays
         DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+
+        //Hace que la tablaPeluqueras tenga el modelo propuesto antes
         tablaPeluqueras.setModel(modelo);
+
+        //Hace que la tabla haga un autoresize dependiendo del tamaño del arrays
         tablaPeluqueras.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
 
+    //Crea el método datosServicios
     public void datosServicios() throws SQLException {
+        //Crea un arrays con los nombres de las columnas de la tabla
         String[] nombresColumnas = {"ID Servicio", "Nombre", "Precio", "Duracion", "Requiere producto", "Id Peluquera"};
+
+        //Copia el arrays que devuelve la funcion Servicios de la clase cx en un arrays
         List<Object[]> datosServicios = cx.Servicios();
+
+        //Crea un arrays multidimensional con las filas del array copiado y las columnas dadas en nombresColumnas
         Object[][] datosArray = new Object[datosServicios.size()][nombresColumnas.length];
+
+        //Bucle para rellenar el arrays datosArray
         for (int i = 0; i < datosServicios.size(); i++) {
             datosArray[i] = datosServicios.get(i);
         }
+
+        //Crea el modelo de tabla cogiendo los datos de los arrays
         DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+
+        //Hace que la tablaServicios tenga el modelo propuesto antes
         tablaServicios.setModel(modelo);
+
+        //Hace que la tabla haga un autoresize dependiendo del tamaño del arrays
         tablaServicios.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
 
+    //Crea el método datosProductos
     public void datosProductos() throws SQLException {
+        //Crea un arrays con los nombres de las columnas de la tabla
         String[] nombresColumnas = {"ID Producto", "Nombre", "Stock", "Proveedor", "Stock Máximo"};
+
+        //Copia el arrays que devuelve la funcion Productos de la clase cx en un arrays
         List<Object[]> datosProductos = cx.Productos();
+
+        //Crea un arrays multidimensional con las filas del array copiado y las columnas dadas en nombresColumnas
         Object[][] datosArray = new Object[datosProductos.size()][nombresColumnas.length];
+
+        //Bucle para rellenar el arrays datosArray
         for (int i = 0; i < datosProductos.size(); i++) {
             datosArray[i] = datosProductos.get(i);
         }
+
+        //Crea el modelo de tabla cogiendo los datos de los arrays
         DefaultTableModel modelo = new DefaultTableModel(datosArray, nombresColumnas);
+
+        //Hace que la tablaProductos tenga el modelo propuesto antes
         tablaProductos.setModel(modelo);
+
+        //Hace que la tabla haga un autoresize dependiendo del tamaño del arrays
         tablaProductos.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton csvBtn;
     private javax.swing.JButton homeBtn;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

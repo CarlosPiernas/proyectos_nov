@@ -6,11 +6,11 @@ package interfaz_pelu;
 
 /**
  *
- * @author Alumno
+ * @author Carlos
  */
 public class PopupGest extends javax.swing.JFrame {
 
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PopupGest.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PopupGest.class.getName());
 
     /**
      * Creates new form PopupGest
@@ -53,10 +53,9 @@ public class PopupGest extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    // Método que abre el Pop-up
     public void abrirPopup() {
+        // Muestra esta pestaña 
         java.awt.EventQueue.invokeLater(() -> new PopupGest().setVisible(true));
 
     }

@@ -4,6 +4,7 @@
  */
 package interfaz_pelu;
 
+import ConectorBD.Conexion;
 import java.sql.SQLException;
 
 /**
@@ -29,6 +30,24 @@ public class Index extends javax.swing.JFrame {
      */
     public Index() {
         initComponents();
+         /* Create and display the form */
+        System.out.println("Se inicia el programa");
+        //Se crea el objeto gestion
+        System.out.println("Creamos el objeto gestion");
+        g = new Gestion();
+        //Se crea el objeto Simulacion
+        System.out.println("creamos el objeto simulacion");
+        s = new Simulacion();
+        //Se crea el objeto Login
+        System.out.println("Creamos el objeto login");
+        l = new Login();
+        //Se crea el objeto PopUp
+        System.out.println("Creamos el objeto Popup");
+        p = new PopupGest();
+        //Se crea el objeto Conexion
+        System.out.println("Creamos el objeto conexion");
+        cx = new Conexion();
+        //cx.Clientes();
     }
 
     /**
@@ -148,50 +167,6 @@ public class Index extends javax.swing.JFrame {
 
     }//GEN-LAST:event_gest_BtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    //Metodo main donde se inicia el programa
-    public static void main(String args[]) throws SQLException{
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        System.out.println("Se inicia el programa");
-        //Se crea el objeto gestion
-        System.out.println("Creamos el objeto gestion");
-        g = new Gestion();
-        //Se crea el objeto Simulacion
-        System.out.println("creamos el objeto simulacion");
-        s = new Simulacion();
-        //Se crea el objeto Login
-        System.out.println("Creamos el objeto login");
-        l = new Login();
-        //Se llama al metodo abrirLogin para abrir la pantalla de Login
-        l.abrirLogin();
-        //Se crea el objeto PopUp
-        System.out.println("Creamos el objeto Popup");
-        p = new PopupGest();
-        //Se crea el objeto Conexion
-        System.out.println("Creamos el objeto conexion");
-        cx = new Conexion();
-        //cx.Clientes();
-        
-    }
     //Metodo que abre el index
     public void abrirIndex() {
         System.out.println(l.getLog());

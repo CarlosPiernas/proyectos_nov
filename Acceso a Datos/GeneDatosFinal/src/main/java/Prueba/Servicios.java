@@ -24,12 +24,10 @@ public class Servicios {
             BufferedReader br1 = new BufferedReader(fr1);
             for (int i=0;i<10;i++){
                 nombres[i]=br1.readLine();
-                //System.out.println(nombres[i]);
+                
             }
             
             BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Alumno\\Desktop\\Datos\\Servicios_Tabla.txt"));
-            
-            // Se generan los 1000 datos
             for (int i = 0; i <= 9; i++) {
                 int dur1 = (int) (Math.random() * 6) + 5;
                 int dur2 = (int) (Math.random() * 11) + 10;

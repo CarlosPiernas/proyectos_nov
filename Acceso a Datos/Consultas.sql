@@ -113,7 +113,7 @@ WITH GastoMensual AS (
 	SELECT cl.id_cliente, cl.nombre, cl.apellido, SUM(CAST (c.precio AS decimal (10,2))) AS gasto_total_mes
 	FROM clientes cl
     JOIN citas c ON cl.id_cliente = c.id_cliente_clientes
-    WHERE c.fecha >= DATE '2025-11-18' - INTERVAL '30 days'
+    WHERE c.fecha >= DATE '2025-11-18' - INTERVAL '150 days'
     GROUP BY cl.id_cliente, cl.nombre, cl.apellido)
 SELECT nombre, apellido, gasto_total_mes, (gasto_total_mes * 0.10) AS descuento_sugerido
 FROM GastoMensual
@@ -129,7 +129,7 @@ JOIN citas_servicios cs ON ins.id_servicio_servicios = cs.id_servicio_servicios
 JOIN citas c ON cs.id_cita_citas = c.id_cita
 WHERE c.fecha >= DATE '2025-11-23' - INTERVAL '30 days'
 GROUP BY i.producto
-ORDER BY unidades_utilizadas_estimadas DESC;
+ORDER BY unidades_utilizadas DESC;
 
 /*14. Ingresos por método de pago: agrupar las facturas según el método de pago 
 (efectivo, tarjeta, tarjeta de compra del Corte Inglés).*/

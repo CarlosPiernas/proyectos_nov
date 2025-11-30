@@ -13,14 +13,18 @@ import java.sql.SQLException;
 public class Simulacion extends javax.swing.JFrame {
 
     //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(simulacion.class.getName());
+    // Se declara el objeto Index
     private static Index i;
+    // Se declara el objeto Gestion
     private static Gestion g;
+    
     /**
      * Creates new form simulacion
+     * Constructor de la clase Simulacion
      */
     public Simulacion() {
-        System.out.println("Se inicia el objeto simulacion");
-        initComponents();
+        System.out.println("Se inicia el objeto simulacion"); // Mensaje de inicio del objeto
+        initComponents(); // Inicializa los componentes visuales de la interfaz
     }
 
     /**
@@ -77,6 +81,9 @@ public class Simulacion extends javax.swing.JFrame {
         peluInd1 = new javax.swing.JLabel();
         estInd1 = new javax.swing.JLabel();
         descInd1 = new javax.swing.JLabel();
+        disp4 = new javax.swing.JLabel();
+        disp5 = new javax.swing.JLabel();
+        disp6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         peluLava1 = new javax.swing.JLabel();
         peluLava2 = new javax.swing.JLabel();
@@ -214,13 +221,13 @@ public class Simulacion extends javax.swing.JFrame {
         descInd.setText("DESCANSO");
 
         nomPelu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nomPelu1.setText("Margarita");
+        nomPelu1.setText("DRISS");
 
         nomPelu2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nomPelu2.setText("Margarita");
+        nomPelu2.setText("JULIA");
 
         nomPelu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nomPelu3.setText("Margarita");
+        nomPelu3.setText("ALVARO");
 
         disp1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         disp1.setText("Disponible");
@@ -311,7 +318,7 @@ public class Simulacion extends javax.swing.JFrame {
         tablaEstado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         tablaEstado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"perro", "woof woff", "midsin", null},
+                {"1", "ALVARO", "terminado", "15"},
                 {null, null, null, null},
                 {null, null, null, null},
                 {"", null, null, null},
@@ -1392,6 +1399,15 @@ public class Simulacion extends javax.swing.JFrame {
         descInd1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         descInd1.setText("GANANCIA ESTIMADA:");
 
+        disp4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        disp4.setText("25");
+
+        disp5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        disp5.setText("11 ms");
+
+        disp6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        disp6.setText("128€");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -1399,20 +1415,35 @@ public class Simulacion extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(estInd1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(peluInd1)
-                    .addComponent(descInd1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(110, Short.MAX_VALUE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(peluInd1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(disp4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(descInd1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(disp6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(estInd1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(disp5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(peluInd1)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(peluInd1)
+                    .addComponent(disp4))
                 .addGap(18, 18, 18)
-                .addComponent(estInd1)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(estInd1)
+                    .addComponent(disp5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(descInd1)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(descInd1)
+                    .addComponent(disp6))
                 .addGap(21, 21, 21))
         );
 
@@ -1437,7 +1468,7 @@ public class Simulacion extends javax.swing.JFrame {
 
         peluLava5.setBackground(new java.awt.Color(51, 255, 255));
         peluLava5.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluLava5.setText("500");
+        peluLava5.setText("0");
 
         peluLava6.setBackground(new java.awt.Color(51, 255, 255));
         peluLava6.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -1450,7 +1481,7 @@ public class Simulacion extends javax.swing.JFrame {
 
         peluLava8.setBackground(new java.awt.Color(51, 255, 255));
         peluLava8.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluLava8.setText("X");
+        peluLava8.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1629,18 +1660,24 @@ public class Simulacion extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+// Accion que hace el boton de atras (Vuelve a Index)
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // Se cierra la pestaña actual
         this.dispose();
+        // Se llama al metodo abrirIndex para volver a la pantalla principal
         i.abrirIndex();
 
     }//GEN-LAST:event_backBtnActionPerformed
-
+// Accion que hace el boton de pausa/reinicio
     private void pausa_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pausa_BtnActionPerformed
         // TODO add your handling code here:
+        // Verifica si el botón está seleccionado (pausado)
         if(pausa_Btn.isSelected()){
-            pausa_Btn.setText("REINICIAR");}
-        else pausa_Btn.setText("PAUSAR");
+            // Si está seleccionado, cambia el texto a REINICIAR
+            pausa_Btn.setText("REINICIAR");
+        }
+        // Si no está seleccionado (no pausado)
+        else pausa_Btn.setText("PAUSAR"); // Cambia el texto a PAUSAR
     }//GEN-LAST:event_pausa_BtnActionPerformed
 
     private void fin_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fin_BtnActionPerformed
@@ -1651,9 +1688,12 @@ public class Simulacion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inicio_BtnActionPerformed
 
+    // Método que abre la ventana de Simulación
     public void abrirSimulacion() {
         //java.awt.EventQueue.invokeLater(() -> new simulacion().setVisible(true));
+        // Muestra esta pestaña
         this.setVisible(true);
+        // Se crean los objetos Index y Gestion para la navegación (si no se crearon antes)
         i = new Index();
         g = new Gestion();
     }
@@ -1674,6 +1714,9 @@ public class Simulacion extends javax.swing.JFrame {
     private javax.swing.JLabel disp1;
     private javax.swing.JLabel disp2;
     private javax.swing.JLabel disp3;
+    private javax.swing.JLabel disp4;
+    private javax.swing.JLabel disp5;
+    private javax.swing.JLabel disp6;
     private javax.swing.JLabel estInd;
     private javax.swing.JLabel estInd1;
     private javax.swing.JButton fin_Btn;

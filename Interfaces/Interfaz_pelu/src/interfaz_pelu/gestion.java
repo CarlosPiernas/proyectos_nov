@@ -12,11 +12,16 @@ import java.sql.SQLException;
  */
 public class Gestion extends javax.swing.JFrame {
 
-    //private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(gestion.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Gestion.class.getName());
+    // Se declara el objeto Datos
     private static Datos d;
+    // Se declara el objeto Consultas
     private static Consultas c;
+    // Se declara el objeto Servicios
     private static Servicios s;
+    // Se declara el objeto Index
     private static Index i;
+    // Se declara el objeto Simulacion
     private static Simulacion sim;
 
     /**
@@ -24,8 +29,7 @@ public class Gestion extends javax.swing.JFrame {
      */
     public Gestion() {
         System.out.println("Se inicia el objeto gestion");
-
-        initComponents();
+        initComponents(); // Inicializa los componentes visuales de la interfaz
     }
 
     /**
@@ -163,66 +167,79 @@ public class Gestion extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    // Accion que hace el boton de consultas
     private void consultas_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultas_BtnActionPerformed
         // TODO add your handling code here:
         System.out.println("funciona el boton consultas");
+        // Se cierra la pestaña actual
         this.dispose();
+        // Se llama al metodo abrirConsultas para abrir la pantalla de consultas
         c.abrirConsultas();
     }//GEN-LAST:event_consultas_BtnActionPerformed
-
+    // Accion que hace el boton de servicios
     private void servicios_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicios_BtnActionPerformed
         // TODO add your handling code here:
         System.out.println("funciona el boton servicios");
+        // Se cierra la pestaña actual
         this.dispose();
         try {
+            // Se llama al metodo abrirServicios para abrir la pantalla de servicios
             s.abrirServicios();
         } catch (SQLException ex) {
+            // En caso de error de SQL, se registra en el log
             System.getLogger(Gestion.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
     }//GEN-LAST:event_servicios_BtnActionPerformed
-
+// Accion que hace el boton de sincronizar 
     private void sincro_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sincro_BtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sincro_BtnActionPerformed
-
+// Accion que hace el boton de datos
     private void datos_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datos_BtnActionPerformed
         // TODO add your handling code here:
         System.out.println("funciona el boton datos");
+        // Se cierra la pestaña actual
         this.dispose();
         try {
             d.abrirDatos();
+            // Se llama al metodo abrirDatos para abrir la pantalla de datos
         } catch (SQLException ex) {
+            // En caso de error de SQL, se registra en el log
             System.getLogger(Gestion.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
     }//GEN-LAST:event_datos_BtnActionPerformed
-
+// Accion que hace el boton de atras (Vuelve a Index)
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        // Se cierra la pestaña actual
         this.dispose();
+        // Se llama al metodo abrirIndex para volver a la pantalla principal
         i.abrirIndex();
     }//GEN-LAST:event_backBtnActionPerformed
-
+// Accion que hace el boton de home (Redirige a Simulación)
     private void homeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeBtnActionPerformed
         // TODO add your handling code here:
+        // Se cierra la pestaña actual
         this.dispose();
+        // Se llama al metodo abrirSimulacion para abrir la pantalla de simulación
         sim.abrirSimulacion();
-        
-            
-        
+
+
     }//GEN-LAST:event_homeBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public void abrirGestion() throws SQLException {
-        //java.awt.EventQueue.invokeLater(() -> new gestion().setVisible(true));
+        // Muestra esta pestaña
         this.setVisible(true);
+        
+        // Se crean los objetos de las otras pantallas para permitir la navegación
         System.out.println("se crea el objeto datos");
-        d = new Datos();
-        c = new Consultas();
-        s = new Servicios();
-        i = new Index();
-        sim = new Simulacion();
+        d = new Datos(); // Crea el objeto Datos
+        c = new Consultas(); // Crea el objeto Consultas
+        s = new Servicios(); // Crea el objeto Servicios
+        i = new Index(); // Crea el objeto Index
+        sim = new Simulacion(); // Crea el objeto Simulacion
     }
 
 

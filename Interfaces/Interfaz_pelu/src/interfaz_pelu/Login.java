@@ -6,7 +6,7 @@ package interfaz_pelu;
 
 /**
  *
- * @author Alumno
+ * @author Carlos
  */
 public class Login extends javax.swing.JFrame {
 
@@ -48,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         borrarBtn = new javax.swing.JButton();
         iniciarBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -155,45 +155,59 @@ public class Login extends javax.swing.JFrame {
     //Acción del boton iniciar
     private void iniciarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarBtnActionPerformed
         // TODO add your handling code here:
-        //En caso de seleccionar administrador en el comboBox realizará lo siguiente
+        //En caso de seleccionar administrador y la contraseña ser "1234", realizará el login de administrador
         if (tipoUsu.getSelectedItem() == "Administrador" && "1234".equals(textContra.getText())) {
-            log = 0;
+            log = 0; // Asigna 0 para indicar que es administrador
+            
+            // Muestra un mensaje de bienvenida
             javax.swing.JOptionPane.showMessageDialog(
                     this,
                     "Bienvenido Admin",
                     "Bienvenido",
                     javax.swing.JOptionPane.PLAIN_MESSAGE);
-            this.dispose();
+            
+            this.dispose(); // Cierra la pestaña actual (Login)
+            
             //Se crea el objeto Index
             i = new Index();
             //Se llama al metodo abrirIndex para abrir la pestaña del Index
             i.abrirIndex();
-            //En caso de seleccionar empleado en el comboBox realizará lo siguiente
+            
+            
+            //En caso de seleccionar empleado y la contraseña ser "1234", realizará el login de empleado
         } else if (tipoUsu.getSelectedItem() == "Empleado" && "1234".equals(textContra.getText())) {
-            log = 1;
+            log = 1; // Asigna 1 para indicar que es empleado
+            
+            // Muestra un mensaje de bienvenida
             javax.swing.JOptionPane.showMessageDialog(
                     this,
                     "Bienvenido empleado",
                     "Bienvenido",
                     javax.swing.JOptionPane.PLAIN_MESSAGE);
-            this.dispose();
+            
+            this.dispose(); // Cierra la pestaña actual (Login)
+            
             //Se crea el objeto Index
             i = new Index();
             //Se llama al metodo abrirIndex para abrir la pestaña del Index
             i.abrirIndex();
+            
+            
         } else {
+            // Si las credenciales no coinciden con ninguna de las opciones
             javax.swing.JOptionPane.showMessageDialog(
                     this,
                     "Contraseña incorrecta",
                     "Error de login",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
         }
-        //Se cierra esta pestaña
 
     }//GEN-LAST:event_iniciarBtnActionPerformed
-
+// Acción del boton borrar: limpia el campo de contraseña
     private void borrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarBtnActionPerformed
         // TODO add your handling code here:
+        // Establece el texto del campo de contraseña a vacío
+        textContra.setText("");
     }//GEN-LAST:event_borrarBtnActionPerformed
 
     private void textContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textContraActionPerformed
@@ -203,7 +217,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    //Metodo que abre el index
+    //Metodo que abre el login
     public void abrirLogin() {
         //abre esta pestaña
         java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
