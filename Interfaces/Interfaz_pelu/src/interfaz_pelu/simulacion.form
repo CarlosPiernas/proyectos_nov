@@ -288,7 +288,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PELUQUERA"/>
+                <Property name="text" type="java.lang.String" value="Luc&#xed;a"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluLava">
@@ -299,7 +299,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PELUQUERA"/>
+                <Property name="text" type="java.lang.String" value="Juanita"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluPeina">
@@ -310,7 +310,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PELUQUERA"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="cleinteLava">
@@ -321,7 +320,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CLIENTE"/>
+                <Property name="text" type="java.lang.String" value="Roberto"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="peluTinte">
@@ -332,7 +331,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PELUQUERA"/>
+                <Property name="text" type="java.lang.String" value="Paco"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="clienteCorte">
@@ -343,7 +342,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CLIENTE"/>
+                <Property name="text" type="java.lang.String" value="Mar&#xed;a"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="clienteTinte">
@@ -354,7 +353,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CLIENTE"/>
+                <Property name="text" type="java.lang.String" value="Jorge"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="clientePeina">
@@ -365,7 +364,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CLIENTE"/>
+                <Property name="text" type="java.lang.String" value="Jose"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JProgressBar" name="corteBarra">

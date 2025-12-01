@@ -128,35 +128,34 @@ public class Simulacion extends javax.swing.JFrame {
 
         peluCorta.setBackground(new java.awt.Color(51, 255, 255));
         peluCorta.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluCorta.setText("PELUQUERA");
+        peluCorta.setText("Lucía");
 
         peluLava.setBackground(new java.awt.Color(51, 255, 255));
         peluLava.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluLava.setText("PELUQUERA");
+        peluLava.setText("Juanita");
 
         peluPeina.setBackground(new java.awt.Color(51, 255, 255));
         peluPeina.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluPeina.setText("PELUQUERA");
 
         cleinteLava.setBackground(new java.awt.Color(51, 255, 255));
         cleinteLava.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        cleinteLava.setText("CLIENTE");
+        cleinteLava.setText("Roberto");
 
         peluTinte.setBackground(new java.awt.Color(51, 255, 255));
         peluTinte.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        peluTinte.setText("PELUQUERA");
+        peluTinte.setText("Paco");
 
         clienteCorte.setBackground(new java.awt.Color(51, 255, 255));
         clienteCorte.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        clienteCorte.setText("CLIENTE");
+        clienteCorte.setText("María");
 
         clienteTinte.setBackground(new java.awt.Color(51, 255, 255));
         clienteTinte.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        clienteTinte.setText("CLIENTE");
+        clienteTinte.setText("Jorge");
 
         clientePeina.setBackground(new java.awt.Color(51, 255, 255));
         clientePeina.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        clientePeina.setText("CLIENTE");
+        clientePeina.setText("Jose");
 
         corteBarra.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 

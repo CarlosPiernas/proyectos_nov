@@ -4,7 +4,6 @@
  */
 package ConectorBD;
 
-import interfaz_pelu.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,8 +19,6 @@ import javax.swing.JOptionPane; // <-- Importación necesaria para el pop-up de 
  */
 public class Conexion {
 
-    //se declara el objeto connection (ya no es static, se manejará localmente en cada método)
-    private static Connection connection; // Aunque se maneje localmente en los métodos, mantenemos la declaración estática si fuera necesaria para otros usos.
 
     //constructor
     public void Conexion() throws SQLException {
