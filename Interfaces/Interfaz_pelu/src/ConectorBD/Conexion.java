@@ -526,13 +526,13 @@ public class Conexion {
              Statement stmt = connection.createStatement()) {
             
             // Define la consulta SQL para exportar la tabla 'clientes' a un archivo CSV
-            String query1 = "COPY public.clientes TO 'C:/Users/Carlos/Desktop/clientes.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query1 = "COPY public.clientes TO 'C:/Users/Alumno/Desktop/clientes.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar la tabla 'peluqueras' a un archivo CSV
-            String query2 = "COPY public.peluqueras TO 'C:/Users/Carlos/Desktop/peluqueras.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query2 = "COPY public.peluqueras TO 'C:/Users/Alumno/Desktop/peluqueras.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar la tabla 'servicios' a un archivo CSV
-            String query3 = "COPY public.servicios TO 'C:/Users/Carlos/Desktop/servicios.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query3 = "COPY public.servicios TO 'C:/Users/Alumno/Desktop/servicios.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar la tabla 'inventario' a un archivo CSV
-            String query4 = "COPY public.inventario TO 'C:/Users/Carlos/Desktop/inventario.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query4 = "COPY public.inventario TO 'C:/Users/Alumno/Desktop/inventario.csv'WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             
             // Ejecuta las consultas de exportación (UPDATE ya que COPY no devuelve ResultSet)
               stmt.executeUpdate(query1); // Exporta clientes
@@ -556,11 +556,11 @@ public class Conexion {
              Statement stmt = connection.createStatement()) {
             
             // Define la consulta SQL para exportar la lista de servicios ordenados por precio (servicios rentables)
-            String query1 = "COPY (SELECT id_servicio, nombre, CAST(PRECIO AS DECIMAL(10,2)), duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY precio DESC) TO 'C:/Users/Carlos/Desktop/serviciosRentables.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query1 = "COPY (SELECT id_servicio, nombre, CAST(PRECIO AS DECIMAL(10,2)), duracion, requier_porducto, id_peluquera_peluqueras FROM servicios ORDER BY precio DESC) TO 'C:/Users/Alumno/Desktop/serviciosRentables.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar la lista de clientes VIP
-            String query2 = "COPY (SELECT id_cliente, nombre, apellido, vip, fecha_alta FROM clientes WHERE vip = true) TO 'C:/Users/Carlos/Desktop/clientesVip.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query2 = "COPY (SELECT id_cliente, nombre, apellido, vip, fecha_alta FROM clientes WHERE vip = true) TO 'C:/Users/Alumno/Desktop/clientesVip.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar la lista de productos con stock bajo
-            String query3 = "COPY (SELECT id_producto, producto, stock_actual, proveedor, stock_max FROM inventario WHERE stock_actual < 5) TO 'C:/Users/Carlos/Desktop/stockBajo.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query3 = "COPY (SELECT id_producto, producto, stock_actual, proveedor, stock_max FROM inventario WHERE stock_actual < 5) TO 'C:/Users/Alumno/Desktop/stockBajo.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             
             // Ejecuta las consultas de exportación
               stmt.executeUpdate(query1); // Exporta servicios rentables
@@ -583,19 +583,19 @@ public class Conexion {
              Statement stmt = connection.createStatement()) {
             
             // Define la consulta SQL para exportar clientes y su total de visitas
-            String query1 = "COPY (SELECT nombre, apellido, \"Visitas totales\" FROM clientesVisitas ) TO 'C:/Users/Carlos/Desktop/clientesVisitas.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query1 = "COPY (SELECT nombre, apellido, \"Visitas totales\" FROM clientesVisitas ) TO 'C:/Users/Alumno/Desktop/clientesVisitas.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar las citas por día
-            String query2 = "COPY (SELECT fecha, \"Citas totales\" FROM diasCitas) TO 'C:/Users/Carlos/Desktop/diasCitas.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query2 = "COPY (SELECT fecha, \"Citas totales\" FROM diasCitas) TO 'C:/Users/Alumno/Desktop/diasCitas.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar servicios y su total de solicitudes
-            String query3 = "COPY (SELECT nombre, \"Solicitudes totales\" FROM serviciosSolicitados ) TO 'C:/Users/Carlos/Desktop/serviciosSolicitados.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query3 = "COPY (SELECT nombre, \"Solicitudes totales\" FROM serviciosSolicitados ) TO 'C:/Users/Alumno/Desktop/serviciosSolicitados.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar citas con precio más alto
-            String query4 = "COPY (SELECT id_cita, CAST(precio as decimal (10,2)), nombre, apellido FROM citasCaras) TO 'C:/Users/Carlos/Desktop/citasCaras.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query4 = "COPY (SELECT id_cita, CAST(precio as decimal (10,2)), nombre, apellido FROM citasCaras) TO 'C:/Users/Alumno/Desktop/citasCaras.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar clientes que pagan con tarjeta
-            String query5 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesTarjeta) TO 'C:/Users/Carlos/Desktop/clientesTarjeta.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query5 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesTarjeta) TO 'C:/Users/Alumno/Desktop/clientesTarjeta.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar clientes que pagan con efectivo
-            String query6 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesEfectivo) TO 'C:/Users/Carlos/Desktop/clientesEfectivo.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query6 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesEfectivo) TO 'C:/Users/Alumno/Desktop/clientesEfectivo.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             // Define la consulta SQL para exportar clientes que pagan con El Corte Inglés
-            String query7 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesCorteIngles) TO 'C:/Users/Carlos/Desktop/clientesCorteIngles.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
+            String query7 = "COPY (SELECT distinct nombre, apellido, metodo_pago FROM clientesCorteIngles) TO 'C:/Users/Alumno/Desktop/clientesCorteIngles.csv' WITH (FORMAT CSV, HEADER FALSE, DELIMITER ',', ENCODING 'UTF8');";
             
             // Ejecuta las consultas de exportación
               stmt.executeUpdate(query1); // Exporta clientesVisitas

@@ -1,6 +1,4 @@
 package com.mycompany.pruebapsp;
-
-import java.util.concurrent.ThreadLocalRandom;
 /**
  *
  * @author Carlos
@@ -47,7 +45,8 @@ public class Clientes extends Thread {
     public void transitarYEntrarZona(Zona zona) {
         // Simula un tiempo de desplazamiento aleatorio entre zonas
         try {
-            Thread.sleep(ThreadLocalRandom.current().nextInt(20, 80));
+            int tiempoDescanso = (int) (Math.random() * (1500 - 500 + 1)) + 500;
+            Thread.sleep(tiempoDescanso);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

@@ -42,14 +42,16 @@ package com.mycompany.pruebapsp;
     public void run() {
         while (gJ.verificarJornadaActiva() || hayClientesEnPuestos()) {
             boolean atencionExitosa = false;
+            //itera mientras haya zonas de trabajo
             for (Zona zona : puestosDeTrabajo) {
-                
+                //si hay un puesto ocupado
                 if (zona.hayClienteOcupandoPuesto()) {
                     if (zona.intentarAtender(this)) {
                         atencionExitosa = true;
                         if (zona.nombreZona.equals("Peinado")) {
                             gJ.registrarAtencion(nombrePelu);
                         }
+                        //saca a la peluquera del bucle cuando encuentra trabajo
                         break; 
                     }
                 }

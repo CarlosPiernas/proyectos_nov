@@ -1,7 +1,5 @@
 package com.mycompany.pruebapsp;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 /**
  *
  * @author Carlos
@@ -58,7 +56,8 @@ public class Zona {
             " en la Zona de " + nombreZona);
             System.out.println("*********************");
             // Simulación del tiempo de servicio
-            Thread.sleep(ThreadLocalRandom.current().nextInt(500, 1500));
+            int tiempoDescanso = (int) (Math.random() * (1500 - 500 + 1)) + 500;
+            Thread.sleep(tiempoDescanso);
             
             System.out.println(pelu.getNombre() + " termina de atender a " + clienteActual.getNombre() + " en " + nombreZona);
             System.out.println("*********************");
