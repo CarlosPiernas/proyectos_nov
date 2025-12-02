@@ -1,0 +1,10 @@
+Lavado
+Corte
+Tinte
+Peinado
+Lavado + Corte
+Lavado + Tinte
+Corte + Tinte
+Corte + Peinado
+Corte + Tinte + Peinado
+Completo
